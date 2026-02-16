@@ -199,6 +199,24 @@ Click **Next**
 1. Drift current - Current that flows due to an applied electric field (potential difference), which causes charge carriers to move in a specific direction.
 2. Diffusion current - Current that flows due to a concentration gradient, where charge carriers move from a region of higher concentration to a region of lower concentration <br/>
         
-```Drift current (Id) = Velocity of charge carriers x Available charge```
+```Drift current (Id) = Velocity of charge carriers x Available charge (over the channel width)```
 
 <img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/8ca8f8bd-3c14-4416-b3bb-4a74467fa8a2" />
+
+## Lecture 3: Drain current model for linear region of operation
+
+<img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/f9f14a0b-88c8-42a1-9881-275c03df6fcb" /> <br/>
+
+- Considering kn= unCox, where kn is the process transconductance, which determines how effectively the device converts gate voltage into drain current.
+
+<img width="800" height="300" alt="image" src="https://github.com/user-attachments/assets/c4234c25-b9d5-43a8-a704-294359f89974" />  <br/>
+
+- As the current equation is still quadratic, on further simplification, we obtain
+
+<img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/0a8a4cc8-0986-4d8f-b109-9e3edfdf46e1" /> <br/>
+
+- Therefore, for all values of VDS ≤ (VGS − Vt), the MOSFET operates in the resistive (linear) region.
+- In this region, the channel is continuous from source to drain, and the device behaves like a voltage-controlled resistor.
+
+
+
