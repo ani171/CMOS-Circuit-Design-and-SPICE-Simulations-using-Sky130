@@ -121,8 +121,8 @@ Click **Next**
 
 <img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/20255246-23fa-4ea4-b7c7-32ae55eaa35f" />  <br/>
 
-- With further increase in Vgs once strong inversion is reached, additional gate voltage attracts more electrons toward the surface.
-- Since the depletion charge is already established, the extra charge comes from mobile electrons supplied by the n+ source and drain regions.
-- This results in the formation of a continuous conducting channel at the surface, allowing current to flow between source and drain.
-- At this stage, a conducting channel has formed between the source and drain regions.
-- However, as VDS=0, there is no lateral electric field to drive the electrons, so no current flows. So the device is in the **Cut-off region**
+- With further increase in VGS beyond strong inversion, additional gate voltage attracts more electrons to the surface, increasing the inversion charge density.
+- The channel becomes stronger (effectively wider), forming a conductive path between source and drain.
+- However, since VDS = 0, there is no electric field to drive electrons from source to drain, so no current flows. Hence, the device remains in the **cutoff region**
+
+#### Role of the Body terminal
