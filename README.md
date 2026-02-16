@@ -144,11 +144,11 @@ This guide explains how to open the provided CMOS VDI file using Oracle VirtualB
 - Vto is the threshold voltage at Vsb=0
 - γ is the body effect coefficient, which indicates how strongly the threshold voltage changes with body bias. It depends on substrate doping and oxide capacitance. <br/>
 
-<img width="250" height="100" alt="image" src="https://github.com/user-attachments/assets/4db43a61-73dd-4b57-8220-14ae993c015c" /> <br/>
+<img width="350" height="200" alt="image" src="https://github.com/user-attachments/assets/4db43a61-73dd-4b57-8220-14ae993c015c" /> <br/>
 
 - φF is the Fermi potential of the substrate, representing the energy difference between the intrinsic level and the Fermi level in the semiconductor <br/>
 
-<img width="939" height="220" alt="image" src="https://github.com/user-attachments/assets/2bf00eeb-9614-4f89-b392-854953ff3d0c" /> <br/>
+<img width="350" height="200" alt="image" src="https://github.com/user-attachments/assets/2bf00eeb-9614-4f89-b392-854953ff3d0c" /> <br/>
 
 - These values are obtained from the foundry and fed into the SPICE model for device modelling and simulation
 
