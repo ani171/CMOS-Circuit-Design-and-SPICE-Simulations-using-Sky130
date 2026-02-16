@@ -126,3 +126,12 @@ Click **Next**
 - However, since VDS = 0, there is no electric field to drive electrons from source to drain, so no current flows. Hence, the device remains in the **cutoff region**
 
 #### Role of the Body terminal
+
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/2bb59ef7-693e-4cb3-9fa4-ddde41906f98" /> <br/>
+
+- Applying a positive voltage to the substrate, an additional reverse bias is observed, as the source is now more negatively charged and the substrate is positively charged.
+- This increases the depletion layer width more near the source <br/>
+
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/88327cd7-25cb-4ab5-baca-e9ba650f9cf2" /> <br/>
+
+## Lecture 4: Threshold voltage with positive substrate potential
