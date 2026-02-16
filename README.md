@@ -44,3 +44,12 @@ Click **Next**
 1. Select the created VM
 2. Click **Start**
 
+## Day 1: NgSpiceSky130 - Basics of NMOS Drain Current (Id) vs Drain to Source Voltage (Vds)
+
+### Why is SPICE Simulation needed?
+- to verify circuit behavior
+- optimize performance
+- identify flaws before physical prototyping
+<img width="784" height="767" alt="image" src="https://github.com/user-attachments/assets/73c5ea9b-62ea-4038-aa77-176a99e55680" />
+<img width="1508" height="635" alt="image" src="https://github.com/user-attachments/assets/f0c3abb4-1ba3-4fac-8768-3c4e76df4ebb" />
+
