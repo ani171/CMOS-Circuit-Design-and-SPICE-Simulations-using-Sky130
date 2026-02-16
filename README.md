@@ -210,5 +210,11 @@ This guide explains how to open the provided CMOS VDI file using Oracle VirtualB
 - Therefore, for all values of VDS ≤ (VGS − Vt), the MOSFET operates in the resistive (linear) region.
 - In this region, the channel is continuous from source to drain, and the device behaves like a voltage-controlled resistor.
 
+## Lecture 4: SPICE conclusion to resistive operation
+- To analyze the impact of VGS and VDS on the drain current (ID), we consider different values of both voltages.
+- For a given VGS, the device remains in the linear (triode) region as long as: VDS < (VGS − Vt).
+- To calculate ID for different values of VGS, we fix a particular VGS and then sweep VDS from 0 up to (VGS − Vt).
+- In this region, ID follows the linear-region equation, and SPICE simulations can be used to obtain and verify the ID–VDS characteristics for each VGS.
+<img width="500" height="200" alt="image" src="https://github.com/user-attachments/assets/c7f604bc-7e9f-48fb-a48b-a6753add9850" />
 
-
+## Lecture 5: Pinch-off region condition
