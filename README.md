@@ -187,11 +187,18 @@ Click **Next**
 ## Lecture 2: Drift current theory
 - In the channel (yellow region below), the induced inversion charge at any point x depends on the local gate overdrive voltage.
 - Since the channel potential varies along its length, the effective gate voltage at position x is VGS − V(x).
-- Therefore, the inversion charge per unit area at point x is proportional to the local overdrive voltage:
-```Qi(x) ∝ −[(VGS − V(x)) − Vt]```
-```Qi(x) = −Cox [(VGS − V(x)) − Vt]```
-    - Where Cox is the gate oxide capacitance per unit area. It represents the capacitance formed between the gate and the channel through the thin oxide layer <br/>
+- Therefore, the inversion charge per unit area at point x is proportional to the local overdrive voltage  <br/>
+
+<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/3e7df49a-3515-41b9-93ef-596a45fcfb20" />  <br/>
+
+- Where Cox is the gate oxide capacitance per unit area. It represents the capacitance formed between the gate and the channel through the thin oxide layer <br/>
 
 <img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/0d5a8931-ccce-441f-9a23-f5b1a64e3bc1" /> <br/>
 
-- Performing First order analysis
+- There are two types of current
+1. Drift current - Current that flows due to an applied electric field (potential difference), which causes charge carriers to move in a specific direction.
+2. Diffusion current - Current that flows due to a concentration gradient, where charge carriers move from a region of higher concentration to a region of lower concentration <br/>
+        
+```Drift current (Id) = Velocity of charge carriers x Available charge```
+
+<img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/8ca8f8bd-3c14-4416-b3bb-4a74467fa8a2" />
