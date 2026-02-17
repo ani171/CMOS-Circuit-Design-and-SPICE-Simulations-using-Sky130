@@ -285,3 +285,31 @@ This guide explains how to open the provided CMOS VDI file using Oracle VirtualB
 <img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/b441358f-688c-43c7-b7ad-74c95d9f6411" />
 
 ## Lecture 2: Circuit description in SPICE syntax
+1. Analyse and note all parameter values
+
+<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/fbab34c1-4268-4f01-93fe-34b62e8a043e" />
+
+2. Defining the nodes
+    - Every element in the circuit must be connected between two electrical points called nodes.
+    - A node is any junction where two or more components meet, and it must be uniquely named in the SPICE netlist.
+
+<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/98bdbe35-2c31-4761-aeb4-aa7fba40c5cc" />
+
+3. Naming the nodes
+
+<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/54281126-fdc5-49ac-bc03-9dc6c5ca0694" />
+
+4. Defining the spice netlist
+- MOSFET lies between four nodes so ```M1 vdd n1 0 0 nmos W=1.8u L=1.2u ```
+    - M1 → Device name (MOSFET instance)
+    - vdd → Drain node
+    - n1 → Gate node
+    - 0 → Source node
+    - 0 → Body node
+    - nmos → Model name (From the technology file)
+    - W=1.8u L=1.2u → Device dimensions
+- **Common Nomenclature** : ```Device_name Drain_pin Gate_pin Source_pin Body_pin Model_name Device_dimensions```
+
+<img width="800" height="500" alt="image" src="https://github.com/user-attachments/assets/45e92aa6-5916-4f53-8b8d-074c08e2d59b" />
+
+## Lecture 3: Define technology parameters
