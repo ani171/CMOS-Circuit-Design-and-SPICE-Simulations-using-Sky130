@@ -443,11 +443,10 @@ Vin in 0 1.8
 
 - The scale in which the parameter dimensions are defined can be obtained in the ```all.spice``` file <br/>
 
+- Cut off region analysis
 <img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/9d8e8aa3-c0d8-48fb-a80a-458f474f1655" /> <br/>
 
 <img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/2dbf88d9-05a6-40a6-b4d0-d031f38b3cc6" /> <br/>
-
-- Cut off region analysis
 
 <img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/878710f0-e6b3-4631-bea5-a3521ae04228" /> <br/>
 
