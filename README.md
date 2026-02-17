@@ -1,4 +1,4 @@
-# CMOS Circuit Design and SPICE Simulations
+<img width="1164" height="653" alt="image" src="https://github.com/user-attachments/assets/b83bcfc5-e07d-4126-9b59-bf0c4bf010b4" /># CMOS Circuit Design and SPICE Simulations
 
 ## VirtualBox Setup
 This guide explains how to open the provided CMOS VDI file using Oracle VirtualBox.
@@ -308,8 +308,45 @@ This guide explains how to open the provided CMOS VDI file using Oracle VirtualB
     - 0 → Body node
     - nmos → Model name (From the technology file)
     - W=1.8u L=1.2u → Device dimensions
-- **Common Nomenclature** : ```Device_name Drain_pin Gate_pin Source_pin Body_pin Model_name Device_dimensions```
+- **Common Nomenclature** (for MOS): ```Device_name Drain_pin Gate_pin Source_pin Body_pin Model_name Device_dimensions```
+### Netlist
+```
+M1 vdd n1 0 0 nmos W=1.8u L=1.2u  
+R1 in n1 55  
+Vdd vdd 0 2.5
+Vin in 0 2.5
+```
 
 <img width="800" height="500" alt="image" src="https://github.com/user-attachments/assets/45e92aa6-5916-4f53-8b8d-074c08e2d59b" />
 
 ## Lecture 3: Define technology parameters
+- Defining and evaluating the model: The MOSFET model (nmos) is defined in the technology/model file, where all device parameters (VTO, kn′, γ, λ, etc.) are specified. The SPICE engine uses this model to compute device behavior.
+- For smaller technology nodes, higher accuracy in parameter extraction is required because short-channel effects and non-idealities become more significant.
+- The model name used in the MOSFET line (e.g., nmos) must exactly match the name defined in the netlist (model definition statement)
+- If the netlist uses ```M1 ... nmos ...,``` then the model definition must be:  <br/>
+```
+.MODEL nmos NMOS (...)
+```
+- The model type (NMOS/PMOS) and its parameters must remain consistent; otherwise, SPICE will throw an error or simulate the wrong device behavior.
+
+<img width="600" height="400" alt="image" src="https://github.com/user-attachments/assets/58503833-bdcb-4efe-8089-a46aabf80615" />
+
+<img width="600" height="400" alt="image" src="https://github.com/user-attachments/assets/7f14ff99-acce-409f-988c-0cba5f5d8bfd" />
+
+- nmos → Model name (must match the name used in the netlist).
+- NMOS → Device type
+- TOX → Oxide thickness
+- VTH0 → Zero-bias threshold voltage
+- U0 → Carrier mobility
+- GAMMA1 → Body effect coefficient
+
+<img width="600" height="400" alt="image" src="https://github.com/user-attachments/assets/50dd1f4f-01c3-44fd-82a0-e7398c107f6e" />
+
+<img width="600" height="400" alt="image" src="https://github.com/user-attachments/assets/7ce0beaa-637d-469a-b860-4073921a380a" />
+
+- The NMOS and PMOS models are defined inside a model library file (xxxx_025um_model.mod). This file contains all technology parameters under a library name
+- In the main netlist, the model file is included using: ```.LIB "xxxx_025um_model.mod" CMOS_MODELS```
+- This links the circuit netlist to the technology model definitions.
+- After including the model file, we can perform DC sweeps of VGS and VDS to obtain the device characteristics.
+
+## Lecture 4: First SPICE simulation
