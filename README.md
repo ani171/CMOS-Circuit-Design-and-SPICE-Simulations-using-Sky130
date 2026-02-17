@@ -29,7 +29,7 @@ This guide explains how to open the provided CMOS VDI file using Oracle VirtualB
 5. Click **Next**
 6. Click **Finish**
 
-<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/810667cd-80c8-464e-b38d-54e2b0d478f9" />
+<img width="800" height="500" alt="image" src="https://github.com/user-attachments/assets/810667cd-80c8-464e-b38d-54e2b0d478f9" />
 
 #### 5. Start the Virtual Machine
 
@@ -45,21 +45,21 @@ This guide explains how to open the provided CMOS VDI file using Oracle VirtualB
 - optimize performance
 - identify flaws before physical prototyping <br/>
 
-<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/73c5ea9b-62ea-4038-aa77-176a99e55680" /> <br/>
+<img width="800" height="500" alt="image" src="https://github.com/user-attachments/assets/73c5ea9b-62ea-4038-aa77-176a99e55680" /> <br/>
 
 - The above is a CMOS inverter. It is the most basic logic gate in digital electronics. It performs the NOT operation <br/>
 - Similarly, modifying the PDN and PUN networks involves various logic circuits that can be made <br/>
 - On feeding various input values to the logic circuit, we obtain its IV characteristics graph as shown below <br/>
 
-<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/f0c3abb4-1ba3-4fac-8768-3c4e76df4ebb" /> <br/>
+<img width="800" height="500" alt="image" src="https://github.com/user-attachments/assets/f0c3abb4-1ba3-4fac-8768-3c4e76df4ebb" /> <br/>
 
 - By simulating and merging the PMOS and NMOS responses, the corresponding SPICE waveform is obtained <br/>
 
-<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/0d2227d6-7832-4d98-a2f9-ec890b895fca" /> <br/>
+<img width="800" height="500" alt="image" src="https://github.com/user-attachments/assets/0d2227d6-7832-4d98-a2f9-ec890b895fca" /> <br/>
 - The propagation delay extracted from this waveform can be used to optimize the Wn/Wp ratio, enabling further tuning of the delay model <br/>
 - Suppose we perform Clock Tree Synthesis (CTS) on the circuit shown below, inserting buffers to drive different capacitive loads at the output <br/>
 
-<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/b289b3a4-f12c-45ea-a5e6-e85a157d9704" /> <br/>
+<img width="800" height="500" alt="image" src="https://github.com/user-attachments/assets/b289b3a4-f12c-45ea-a5e6-e85a157d9704" /> <br/>
 
 - From these spice simulations, we obtain a delay table that includes the input slew and output load <br/>
 <img width="2141" height="518" alt="image" src="https://github.com/user-attachments/assets/fdcd03b7-3d62-43ea-94e5-b42515b9f25e" /> <br/>
@@ -83,7 +83,7 @@ This guide explains how to open the provided CMOS VDI file using Oracle VirtualB
 | Body Terminal | Substrate connection terminal | • Usually connected to ground in NMOS <br> • Affects threshold voltage (body effect) <br> • Important for device modeling |
 
 <br/>
-<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/1b31d1fd-671c-41de-93c7-3695d559501c" /> <br/>
+<img width="800" height="500" alt="image" src="https://github.com/user-attachments/assets/1b31d1fd-671c-41de-93c7-3695d559501c" /> <br/>
 
 #### Threshold voltage (Vt)
 - Threshold voltage is the minimum gate-to-source voltage required to form an inversion layer (conducting channel) between source and drain, allowing the MOSFET to turn ON <br/>
@@ -95,15 +95,15 @@ This guide explains how to open the provided CMOS VDI file using Oracle VirtualB
 - Now, Body-Source and Body-Drain form a pn junction diode 
 - As both junctions are OFF, high resistance is observed, thus no conductivity between Source and Drain <br/>
 
-<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/c067006d-8848-42e2-b6ed-c1aeeb2d0b77" /> <br/>
+<img width="800" height="500" alt="image" src="https://github.com/user-attachments/assets/c067006d-8848-42e2-b6ed-c1aeeb2d0b77" /> <br/>
 
 - When a small positive voltage is applied to the gate, an electric field is established across the gate oxide.
 - The gate oxide acts as a capacitor, causing positive charges (holes) in the p-type substrate to be repelled deeper into the substrate, leaving behind immobile negative ions near the surface.
 - As these negative charges accumulate, a depletion region forms beneath the gate. <br/>
 
-<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/777eb3ae-af5b-4f28-80c0-4bf5a2f5590c" />  <br/>
+<img width="800" height="500" alt="image" src="https://github.com/user-attachments/assets/777eb3ae-af5b-4f28-80c0-4bf5a2f5590c" />  <br/>
 
-<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/f15ecc07-48e5-4894-acc3-e2461cd3baec" /> <br/>
+<img width="800" height="500" alt="image" src="https://github.com/user-attachments/assets/f15ecc07-48e5-4894-acc3-e2461cd3baec" /> <br/>
 
 ## Lecture 3: Strong Inversion
 - Increasing the gate voltage Vgs, the electric field across the oxide strengthens.
@@ -111,7 +111,7 @@ This guide explains how to open the provided CMOS VDI file using Oracle VirtualB
 - When Vgs increases further, electrons accumulate at the surface and form an n-type inversion layer. This is called **strong inversion** or **surface inversion**
 - The voltage at which strong inversion occurs is known as the threshold voltage  <br/>
 
-<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/20255246-23fa-4ea4-b7c7-32ae55eaa35f" />  <br/>
+<img width="800" height="500" alt="image" src="https://github.com/user-attachments/assets/20255246-23fa-4ea4-b7c7-32ae55eaa35f" />  <br/>
 
 - With further increase in VGS beyond strong inversion, additional gate voltage attracts more electrons to the surface, increasing the inversion charge density.
 - The channel becomes stronger (effectively wider), forming a conductive path between source and drain.
@@ -119,12 +119,12 @@ This guide explains how to open the provided CMOS VDI file using Oracle VirtualB
 
 #### Role of the Body terminal
 
-<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/2bb59ef7-693e-4cb3-9fa4-ddde41906f98" /> <br/>
+<img width="800" height="500" alt="image" src="https://github.com/user-attachments/assets/2bb59ef7-693e-4cb3-9fa4-ddde41906f98" /> <br/>
 
 - Applying a positive voltage to the substrate, an additional reverse bias is observed, as the source is now more negatively charged and the substrate is positively charged.
 - This increases the depletion layer width more near the source <br/>
 
-<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/88327cd7-25cb-4ab5-baca-e9ba650f9cf2" /> <br/>
+<img width="800" height="500" alt="image" src="https://github.com/user-attachments/assets/88327cd7-25cb-4ab5-baca-e9ba650f9cf2" /> <br/>
 
 ## Lecture 4: Threshold voltage with positive substrate potential
 - As VGS increases, the electric field across the oxide increases, and the depletion region beneath the gate expands in both cases (VSB = 0 and VSB > 0).
@@ -139,7 +139,7 @@ This guide explains how to open the provided CMOS VDI file using Oracle VirtualB
 - In the second case, when VSB > 0, an additional voltage (say V1) is required to overcome the increased depletion charge.
 - Therefore, the new gate voltage required for inversion becomes: **VGS = VTO + V1** 
 
-<img width="500" height="200" alt="image" src="https://github.com/user-attachments/assets/5b1a280e-ea97-418f-a3b6-45f77d7d3289" /> <br/>
+<img width="800" height="200" alt="image" src="https://github.com/user-attachments/assets/5b1a280e-ea97-418f-a3b6-45f77d7d3289" /> <br/>
 
 - Vto is the threshold voltage at Vsb=0
 - γ is the body effect coefficient, which indicates how strongly the threshold voltage changes with body bias. It depends on substrate doping and oxide capacitance. <br/>
@@ -157,7 +157,7 @@ This guide explains how to open the provided CMOS VDI file using Oracle VirtualB
 - On increasing VGS > Vt, the channel charge density increases
 - In the channel, the induced charge Qi is directly proportional to (Vgs - Vt). This excess voltage, known as the overdrive voltage, creates additional mobile electrons in the channel, increasing the drain current.  <br/>
 
-<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/76f212fd-8e55-481c-a80f-9126a104c716" />  <br/>
+<img width="800" height="500" alt="image" src="https://github.com/user-attachments/assets/76f212fd-8e55-481c-a80f-9126a104c716" />  <br/>
 
 - Let Vt (NMOS) = 0.45 V, VGS = 1 V and VDS = 0.05 V.
 - Since VGS > Vt, the transistor is ON and a conducting inversion channel is formed between source and drain.
@@ -167,14 +167,14 @@ This guide explains how to open the provided CMOS VDI file using Oracle VirtualB
     - When VDS is applied, the local channel potential becomes V(x), which varies from 0 at the source to VDS at the drain.
     - Therefore, the effective overdrive at any point x becomes (VGS − V(x) − Vt), meaning the channel charge gradually decreases from source to drain. <br/>
 
-<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/6298ab08-fca4-4868-a012-9b56a973c8f4" />  <br/>
+<img width="800" height="500" alt="image" src="https://github.com/user-attachments/assets/6298ab08-fca4-4868-a012-9b56a973c8f4" />  <br/>
 
 | Parameter | Defination |
 |------------|------------|
 | Channel Length (L) | The physical distance between the source and drain defined during fabrication (layout dimension). |
 | Effective Channel Length (Leff) | The actual conductive channel length after accounting for lateral diffusion and short-channel effects |
 
-<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/7728045d-565e-4360-a89f-7d23a46edf07" />
+<img width="800" height="500" alt="image" src="https://github.com/user-attachments/assets/7728045d-565e-4360-a89f-7d23a46edf07" />
 
 ## Lecture 2: Drift current theory
 - In the channel (yellow region below), the induced inversion charge at any point x depends on the local gate overdrive voltage.
@@ -185,7 +185,7 @@ This guide explains how to open the provided CMOS VDI file using Oracle VirtualB
 
 - Where Cox is the gate oxide capacitance per unit area. It represents the capacitance formed between the gate and the channel through the thin oxide layer <br/>
 
-<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/0d5a8931-ccce-441f-9a23-f5b1a64e3bc1" /> <br/>
+<img width="800" height="500" alt="image" src="https://github.com/user-attachments/assets/0d5a8931-ccce-441f-9a23-f5b1a64e3bc1" /> <br/>
 
 - There are two types of current
 1. Drift current - Current that flows due to an applied electric field (potential difference), which causes charge carriers to move in a specific direction.
@@ -215,7 +215,7 @@ This guide explains how to open the provided CMOS VDI file using Oracle VirtualB
 - For a given VGS, the device remains in the linear (triode) region as long as: VDS < (VGS − Vt).
 - To calculate ID for different values of VGS, we fix a particular VGS and then sweep VDS from 0 up to (VGS − Vt).
 - In this region, ID follows the linear-region equation, and SPICE simulations can be used to obtain and verify the ID–VDS characteristics for each VGS.
-<img width="500" height="200" alt="image" src="https://github.com/user-attachments/assets/c7f604bc-7e9f-48fb-a48b-a6753add9850" />
+<img width="800" height="200" alt="image" src="https://github.com/user-attachments/assets/c7f604bc-7e9f-48fb-a48b-a6753add9850" />
 
 ## Lecture 5: Pinch-off region condition
 - When (VGS − VDS) > Vt, the effective gate voltage at the drain end is still greater than the threshold voltage. This means inversion is maintained even at the drain side
@@ -244,13 +244,13 @@ This guide explains how to open the provided CMOS VDI file using Oracle VirtualB
 
 ``` Id = kn/2 (Vgs-Vt)^2``` <br/>
 
-<img width="500" height="250" alt="image" src="https://github.com/user-attachments/assets/11105eee-d639-4614-84b0-1aa2d9e63cc7" />  <br/>
+<img width="800" height="250" alt="image" src="https://github.com/user-attachments/assets/11105eee-d639-4614-84b0-1aa2d9e63cc7" />  <br/>
 
 - In saturation, the MOSFET ideally behaves like a constant current source.
 - However, the current is not completely independent of VDS. As VDS increases, the depletion region at the drain expands.
 - This expansion reduces the effective conductive channel length. As the effective channel length decreases, the drain current increases slightly with VDS. This effect is known as **channel length modulation**
 
-<img width="500" height="250" alt="image" src="https://github.com/user-attachments/assets/869dd17e-c959-4948-b493-f787e2c240a5" />
+<img width="800" height="250" alt="image" src="https://github.com/user-attachments/assets/869dd17e-c959-4948-b493-f787e2c240a5" />
 
 ## Introduction to SPICE
 ## Lecture 1: Basic SPICE setup
@@ -274,7 +274,7 @@ This guide explains how to open the provided CMOS VDI file using Oracle VirtualB
 - We define the MOSFET with its node connections (Drain, Gate, Source, Bulk), W/L values, and bias sources.
 - The circuit equivalent of the given MOSFET is modeled as shown, and the simulator internally uses the model parameters to compute the electrical behavior.
 
-<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/35343460-df67-4086-bb9e-009b3c647090" />
+<img width="800" height="500" alt="image" src="https://github.com/user-attachments/assets/35343460-df67-4086-bb9e-009b3c647090" />
 
 - In the SPICE netlist, the MOSFET is defined using four nodes: **Drain, Gate, Source, Bulk (Body)**
 - Voltage sources are connected to apply VGS and VDS, while the bulk is usually tied to VSS (ground) for NMOS.
@@ -282,7 +282,7 @@ This guide explains how to open the provided CMOS VDI file using Oracle VirtualB
 - A gate protection resistor is added to limit sudden current spikes into the gate.
 - Although the MOSFET gate ideally draws no DC, it has gate capacitance, so during switching, a large transient current can flow. The resistor protects the gate oxide and the driving circuit.
 
-<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/b441358f-688c-43c7-b7ad-74c95d9f6411" />
+<img width="800" height="500" alt="image" src="https://github.com/user-attachments/assets/b441358f-688c-43c7-b7ad-74c95d9f6411" />
 
 ## Lecture 2: Circuit description in SPICE syntax
 1. Analyse and note all parameter values
