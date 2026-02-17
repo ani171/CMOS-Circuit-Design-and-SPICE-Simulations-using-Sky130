@@ -218,3 +218,38 @@ This guide explains how to open the provided CMOS VDI file using Oracle VirtualB
 <img width="500" height="200" alt="image" src="https://github.com/user-attachments/assets/c7f604bc-7e9f-48fb-a48b-a6753add9850" />
 
 ## Lecture 5: Pinch-off region condition
+- When (VGS − VDS) > Vt, the effective gate voltage at the drain end is still greater than the threshold voltage. This means inversion is maintained even at the drain side
+- Since inversion exists along the entire channel from source (x = 0) to drain (x = L), a continuous conducting path connects source and drain.
+- In this condition, the device operates in the linear (triode) region, and the drain current increases approximately linearly with VDS for small values of VDS.
+
+<img width="1000" height="500" alt="image" src="https://github.com/user-attachments/assets/642a659d-11ae-4277-af57-a5127d9f2616" /> <br/>
+
+- When (VGS − VDS) = Vt, the effective gate-to-channel voltage at the drain end becomes exactly equal to the threshold voltage required for surface inversion.
+- This means that at the drain end, the surface is just at the onset of inversion — the inversion charge density becomes zero at that point.
+- Since the inversion layer disappears at the drain side, *the channel no longer extends fully to the drain*. This is called **pinch-off**.
+- At pinch-off, the channel disappears only at the drain end, but the current does not stop flowing. Electrons reaching the pinch-off point are swept across the depletion region to the drain due to the strong electric field. As a result, the drain current no longer increases linearly with VDS
+
+<img width="1000" height="500" alt="image" src="https://github.com/user-attachments/assets/9d34e16f-3108-4459-8380-50276c28848c" />  <br/>
+
+- When VDS exceeds (VGS − Vt), the MOSFET enters the saturation region. At this point, the drain end no longer satisfies the inversion condition, and pinch-off occurs near the drain.
+- Since the local channel potential reduces the effective gate voltage, the effective overdrive at any point along the channel is given by (VGS − V(x)). As V(x) increases from source to drain, the inversion charge decreases toward the drain end.
+- As VDS increases further beyond (VGS − Vt), the pinch-off point moves slightly toward the source.
+
+<img width="1000" height="500" alt="image" src="https://github.com/user-attachments/assets/e8735840-bd6f-49a4-8b28-d5d8795cdb3d" />
+
+## Lecture 6: Drain current model for saturation region of operation
+- When (VGS − VDS) ≤ Vt, the channel disappears at the drain side 
+- In saturation, the channel voltage remains approximately constant at (VGS − Vt), unlike the linear region where it varies with V(x)
+- The drain current ideally becomes independent of VDS and depends mainly on (VGS − Vt), assuming channel length modulation is neglected <br/>
+
+``` Id = kn/2 (Vgs-Vt)^2``` <br/>
+
+<img width="500" height="250" alt="image" src="https://github.com/user-attachments/assets/11105eee-d639-4614-84b0-1aa2d9e63cc7" />  <br/>
+
+- In saturation, the MOSFET behaves like a constant current source since the drain current is nearly constant.
+- However, the current is not completely independent of VDS; it slightly increases with VDS due to channel length modulation
+
+<img width="500" height="250" alt="image" src="https://github.com/user-attachments/assets/869dd17e-c959-4948-b493-f787e2c240a5" />
+
+## Introduction to SPICE
+## Lecture 1: Basic SPICE setup
