@@ -350,3 +350,8 @@ Vin in 0 2.5
 - After including the model file, we can perform DC sweeps of VGS and VDS to obtain the device characteristics.
 
 ## Lecture 4: First SPICE simulation
+1. Open VirtualBox
+2. Git clone ```git clone https://github.com/kunalg123/sky130CircuitDesignWorkshop.git```
+3. The sky130CircuitDesignWorkshop folder would be created
+4. In the terminal: ```cd sky130CircuitDesignWorkshop/design/
+5. 
