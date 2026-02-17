@@ -248,9 +248,40 @@ This guide explains how to open the provided CMOS VDI file using Oracle VirtualB
 
 - In saturation, the MOSFET ideally behaves like a constant current source.
 - However, the current is not completely independent of VDS. As VDS increases, the depletion region at the drain expands.
-- This expansion reduces the effective conductive channel length. Because the effective channel length decreases, the drain current slightly increases with VDS. This effect is known as **channel length modulation**
+- This expansion reduces the effective conductive channel length. As the effective channel length decreases, the drain current increases slightly with VDS. This effect is known as **channel length modulation**
 
 <img width="500" height="250" alt="image" src="https://github.com/user-attachments/assets/869dd17e-c959-4948-b493-f787e2c240a5" />
 
 ## Introduction to SPICE
 ## Lecture 1: Basic SPICE setup
+- SPICE uses predefined device models to represent transistors and other circuit elements accurately.
+- The user provides circuit inputs through a netlist, which describes the components and their connections.
+- SPICE then simulates the circuit and generates waveforms and output data.
+- These results can be used to calculate delays, characterize cells, and further support analyses such as Static Timing Analysis (STA) and other performance evaluations
+
+<img width="800" height="500" alt="image" src="https://github.com/user-attachments/assets/a78befdd-b4c7-466a-a5f0-7f59ca8e45a3" />  <br/>
+
+- Parameters such as VTO, kn′, γ, and λ (highlighted in brown in the image above) are fixed for a given technology node.
+- These are called technology constants, as they depend on the fabrication process and device characteristics.
+- They are provided by the foundry and are defined in the SPICE model file used by the simulation engine.
+
+<img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/9c19ab7d-9d48-483d-b0b4-5fbfd6be154c" />
+
+- When we provide the SPICE model parameters (technology file) and the SPICE netlist (circuit description) to the SPICE engine, the simulator computes the device characteristics.
+- By performing a DC sweep, we can obtain Id vs Vds curves for different values of Vgs.
+#### SPICE Netlist:
+- The device must be described in a specific syntax format understood by the SPICE engine.
+- We define the MOSFET with its node connections (Drain, Gate, Source, Bulk), W/L values, and bias sources.
+- The circuit equivalent of the given MOSFET is modeled as shown, and the simulator internally uses the model parameters to compute the electrical behavior.
+
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/35343460-df67-4086-bb9e-009b3c647090" />
+
+- In the SPICE netlist, the MOSFET is defined using four nodes: **Drain, Gate, Source, Bulk (Body)**
+- Voltage sources are connected to apply VGS and VDS, while the bulk is usually tied to VSS (ground) for NMOS.
+- The simulator does not model the physical cross-section directly; instead, it uses the mathematical model parameters from the model file to compute the electrical behavior.
+- A gate protection resistor is added to limit sudden current spikes into the gate.
+- Although the MOSFET gate ideally draws no DC, it has gate capacitance, so during switching, a large transient current can flow. The resistor protects the gate oxide and the driving circuit.
+
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/b441358f-688c-43c7-b7ad-74c95d9f6411" />
+
+## Lecture 2: Circuit description in SPICE syntax
