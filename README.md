@@ -246,8 +246,9 @@ This guide explains how to open the provided CMOS VDI file using Oracle VirtualB
 
 <img width="500" height="250" alt="image" src="https://github.com/user-attachments/assets/11105eee-d639-4614-84b0-1aa2d9e63cc7" />  <br/>
 
-- In saturation, the MOSFET behaves like a constant current source since the drain current is nearly constant.
-- However, the current is not completely independent of VDS; it slightly increases with VDS due to channel length modulation
+- In saturation, the MOSFET ideally behaves like a constant current source.
+- However, the current is not completely independent of VDS. As VDS increases, the depletion region at the drain expands.
+- This expansion reduces the effective conductive channel length. Because the effective channel length decreases, the drain current slightly increases with VDS. This effect is known as **channel length modulation**
 
 <img width="500" height="250" alt="image" src="https://github.com/user-attachments/assets/869dd17e-c959-4948-b493-f787e2c240a5" />
 
