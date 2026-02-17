@@ -352,6 +352,85 @@ Vin in 0 2.5
 ## Lecture 4: First SPICE simulation
 1. Open VirtualBox
 2. Git clone ```git clone https://github.com/kunalg123/sky130CircuitDesignWorkshop.git```
-3. The sky130CircuitDesignWorkshop folder would be created
-4. In the terminal: ```cd sky130CircuitDesignWorkshop/design/
-5. 
+
+<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/d5774d32-8808-4924-b12a-309b320417d3" />
+
+3. A folder named sky130CircuitDesignWorkshop will be created after setup.
+4. In the terminal, navigate to the design directory: ```cd sky130CircuitDesignWorkshop/design/```
+5. Use the ```ls``` command to list the files inside the design folder
+
+<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/a2e0fde2-c67f-49c0-a84e-6d95ec848127" />
+
+6. To view the available cells and models, navigate to the sky130_fd_pr folder: ```cd sky130_fd_pr/```, then list the contents using ```ls```
+7. Move into the cells directory ```cd cells/```. This folder contains device folders ```nfet_01v8``` and ```pfet_01v8``` 
+
+<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/32197317-810a-4550-a5ac-4a3aecb49705" />
+
+8. Inside the ```nfet_01v8``` folder, to view the different library files corresponding to various process corners (e.g., TT, FF, SS, etc.), use ```ls```. These files define the NMOS model parameters for different operating conditions and process variations.
+
+<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/0bbac31d-1912-4549-88bc-bcab682d8f1a" />
+
+9. For the Typical (TT) corner, open the model file using ``` less sky130_fd_pr__nfet_01v8___tt.pm3.spice```. This file contains all the NMOS model parameters defined for the TT process corner.
+10. To exit the file type ```q```
+
+<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/a883e8cc-0c22-41a7-b26d-1aae4cee6efd" />
+
+11. The available W and L values are predefined inside ```sky130_fd_pr__nfet_01v8___tt.corner.spice``` file. For simulation, the chosen W and L must match one of the values specified in the library.
+If unsupported dimensions are used, the simulator may throw an error.
+
+<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/6641980f-ff02-44b6-944e-83635164ed05" /> <br/>
+
+<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/6cf7dc42-c877-417f-bb10-17fa9731b549" />
+
+12. Going back to the models file by ```cd ../../models```. We can find ```sky130.lib.spice```. This file contains all the library files for nfet and pfet for different corners
+
+<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/fa5d0afa-a6d6-43b5-8baa-d89fd58a60d4" />  <br/>
+
+<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/893b555a-2e09-435d-9dfb-3ab6192dc346" />
+
+13. For further simulations, go back to the ```design``` folder and open ```day1_nfet_idvds_L2_W5.spice``` using ```vim day1_nfet_idvds_L2_W5.spice```
+
+<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/4e8c93c6-19a1-4784-a4f3-92d7a85cd925" />  <br/>
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/2abdcbc4-5dff-4879-b727-8dbf835cf726" /> <br/>
+
+- The green box indicates the attached Sky130 library file
+- The yellow box specifies the process corner being used.
+    - tt → Typical-Typical
+    - sf → Slow-Fast
+    - ff → Fast-Fast
+    - ss → Slow-Slow
+- The selected corner determines which set of model parameters is used during simulation.
+- **Netlist description** <br/>
+```
+XM1 Vdd n1 0 0 sky130_fd_pr__nfet_01v8 w=5 l=2
+R1 n1 in 55
+Vdd Vdd 0 1.8
+Vin in 0 1.8
+```
+- The NMOS model used is sky130_fd_pr__nfet_01v8.
+- The W and L values are chosen from the corresponding corner.spice file to ensure valid dimensions for simulation.
+- The supply voltage used for this device is 1.8V, as it is a 1.8V NMOS variant.
+- **Simulation commands**  <br/>
+```
+.dc Vdd 0 1.8 0.1 Vin 0 1.8 0.2
+```
+- Vds is swept from 0 to 1.8 with a step of 0.1V and Vgs with a step of 0.2V
+
+14. To run this file and obtain I vs V curve use the command ```ngspice day1_nfet_idvds_L2_W5.spice```
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/b82a8d08-3feb-4253-ae03-62139dc20565" />
+
+15. To plot the Id curve run the command ```plot -vdd#branch```. We obtain the Id vs Vds graph for different values of Vgs
+
+<img width="300" height="300" alt="image" src="https://github.com/user-attachments/assets/44044d36-9120-4960-84d1-c28813cab087" /> <br/>
+
+<img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/7954e1e0-4002-4ce9-b179-1a3a8cada1f5" />  <br/>
+
+- Initially, as VGS increases (just above Vt), the drain current increases quadratically with respect to Vgs-Vt
+- At higher VGS values, the behavior gradually becomes more linear, mainly due to mobility degradation and other non-ideal short-channel effects
+- To view the current at a specific point on the graph, left-click on the required point. The corresponding coordinate values are displayed in the terminal. The Y-coordinate represents the drain current (Id) at that operating point.
+
+<img width="300" height="300" alt="image" src="https://github.com/user-attachments/assets/09938891-901c-44c7-9c65-097ac5d1a844" />
+
+## Lecture 5: SPICE Lab with sky130 models
