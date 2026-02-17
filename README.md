@@ -434,3 +434,22 @@ Vin in 0 1.8
 <img width="300" height="300" alt="image" src="https://github.com/user-attachments/assets/09938891-901c-44c7-9c65-097ac5d1a844" />
 
 ## Lecture 5: SPICE Lab with sky130 models
+- Open ```sky130.lib.space``` file in ```models``` 
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/df4bc6b1-3aca-4e97-bab3-13a50ea3aa2a" />  <br/>
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/1e7970c8-afcc-4997-9d6c-4506d7f8108d" /> <br/>
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/d3e42812-3322-4704-be90-03b0dd776f69" /> <br/>
+
+- The scale in which the parameter dimensions are defined can be obtained in the ```all.spice``` file <br/>
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/9d8e8aa3-c0d8-48fb-a80a-458f474f1655" /> <br/>
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/2dbf88d9-05a6-40a6-b4d0-d031f38b3cc6" /> <br/>
+
+- Cut off region analysis
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/878710f0-e6b3-4631-bea5-a3521ae04228" /> <br/>
+
+- A very small current can be observed for lower Vgs (Vgs=0.4V)
+- For the device to be ON, Vgs>= Vt, the current is very minimal, as the transistor is in the cut-off region
