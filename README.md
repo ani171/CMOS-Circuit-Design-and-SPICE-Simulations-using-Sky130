@@ -1,4 +1,4 @@
-<img width="1164" height="653" alt="image" src="https://github.com/user-attachments/assets/b83bcfc5-e07d-4126-9b59-bf0c4bf010b4" /># CMOS Circuit Design and SPICE Simulations
+# CMOS Circuit Design and SPICE Simulations
 
 ## VirtualBox Setup
 This guide explains how to open the provided CMOS VDI file using Oracle VirtualBox.
