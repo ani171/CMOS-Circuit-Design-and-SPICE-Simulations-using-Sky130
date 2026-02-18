@@ -555,7 +555,7 @@ Vin in 0 1.8
 
 <img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/8a107a30-315e-43ee-af9d-4077977ff87c" />  <br/>
 
-| Region                  | Long Channel (> 250 nm)                          | Short Channel (< 250 nm)                          |
+| Region                  | Long Channel                     | Short Channel                         |
 |--------------------------|--------------------------------------------------|---------------------------------------------------|
 | Cutoff                   | No channel formation (Vgs < Vt)                 | No channel formation (Vgs < Vt)                  |
 | Resistive (Linear)       | Id increases linearly with Vds                  | Id increases linearly with Vds                   |
@@ -565,3 +565,13 @@ Vin in 0 1.8
 <img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/d49f67d8-f2b6-42bc-982d-684286567eb4" />
 
 ## Lecture 4: Velocity saturation drain current model
+
+- Define Vgt = Vgs − Vt (gate overdrive voltage), since analysis is performed at higher Vgs values.
+- The drain current equation is expressed in terms of Vgt.
+- For lower values of Vds, the channel length modulation term (λVds) is neglected.
+- Vdsat is a technology parameter
+    - It represents the drain-to-source voltage at which the device enters the velocity saturation region.
+    - Beyond Vdsat, carrier velocity saturates and the drain current deviates from ideal quadratic behavior.
+
+<img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/59c16b70-770a-4388-939f-c534726b0de1" />
+
