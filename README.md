@@ -510,6 +510,14 @@ Vin in 0 1.8
 
 <img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/2c9222b2-c391-4dfa-8f84-09f1410833d2" />  <br/>
 
-<img width="1000" height="1000" alt="image" src="https://github.com/user-attachments/assets/e699a5a4-04e8-43b3-9443-c68c9e0b9b09" />
+<img width="1000" height="1000" alt="image" src="https://github.com/user-attachments/assets/e699a5a4-04e8-43b3-9443-c68c9e0b9b09" /> <br/>
 
+1. W = 1.8u, L = 1.2u → Long-channel device
+    - Shows a more quadratic (square-law) behavior.
+    - Id increases slowly near threshold and then rises rapidly as Vgs increases.
+    - Follows approximately Id ∝ (Vgs − Vt)².
 
+2. W = 0.375u, L = 0.25u → Short-channel device
+    - Shows a more linear behavior at higher Vgs.
+    - Deviation from square-law due to velocity saturation.
+    - Id increases almost linearly with Vgs in saturation.
