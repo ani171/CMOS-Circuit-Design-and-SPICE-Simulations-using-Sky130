@@ -521,3 +521,47 @@ Vin in 0 1.8
     - Shows a more linear behavior at higher Vgs.
     - Deviation from square-law due to velocity saturation.
     - Id increases almost linearly with Vgs in saturation.
+
+## Lecture 3: Velocity saturation at lower and higher electric fields
+
+- For a short-channel device, the Id vs Vgs curve shows more linear behavior as Vgs increases.
+- This happens due to the velocity saturation effect, where carrier velocity reaches its maximum limit at high electric fields, preventing the current from following the ideal quadratic relationship.
+
+<img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/175324b9-81d2-4442-997c-d5b35b50a4a1" /> <br/>
+
+- For lower values of electric field, carrier velocity increases linearly with the electric field.
+- After a certain field (critical field), the velocity reaches a maximum value and saturates.
+- This happens due to increased scattering effects at high electric fields, which limit further acceleration of carriers.
+
+<img width="1708" height="558" alt="image" src="https://github.com/user-attachments/assets/b23c4fa2-25a2-45b3-9e66-da108fe68941" />
+
+#### Scattering effects
+- As electrons move in the channel, they continuously collide with lattice atoms. These collisions are called scattering events.
+- At low electric fields, electrons gain small energy between collisions, so velocity increases almost linearly with the field.
+- At high electric fields, electrons gain large energy, which increases lattice vibrations (phonons). Increased lattice vibrations cause more frequent collisions (phonon scattering).
+- Because of these frequent scattering events, electrons cannot accelerate further, and their velocity reaches a maximum value
+#### Modelling the velocity
+- Boundary conditions:
+    1. For electric field ```E ≤ Ec``` (critical field): Electron velocity vn increases linearly with electric field
+    2. For electric field ```E ≥ Ec```: Electron velocity reaches saturation velocity (vsat) and becomes approximately constant <br/>
+
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/37cc8772-867e-442b-96f6-150ae09ab5ca" /> <br/>
+
+- For continuity substituting E=Ec we obtain  <br/>
+
+<img width="250" height="100" alt="image" src="https://github.com/user-attachments/assets/b7b377da-11af-419f-9126-5480e39066be" />  <br/>
+
+- Rederiving the drain current equations  <br/>
+
+<img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/8a107a30-315e-43ee-af9d-4077977ff87c" />  <br/>
+
+| Region                  | Long Channel (> 250 nm)                          | Short Channel (< 250 nm)                          |
+|--------------------------|--------------------------------------------------|---------------------------------------------------|
+| Cutoff                   | No channel formation (Vgs < Vt)                 | No channel formation (Vgs < Vt)                  |
+| Resistive (Linear)       | Id increases linearly with Vds                  | Id increases linearly with Vds                   |
+| Velocity Saturation      | Not significant                                 | Carrier velocity saturates at high electric field |
+| Saturation               | Id ∝ (Vgs − Vt)² (square-law behavior)         | Id ≈ linear with (Vgs − Vt)                      |
+
+<img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/d49f67d8-f2b6-42bc-982d-684286567eb4" />
+
+## Lecture 4: Velocity saturation drain current model
