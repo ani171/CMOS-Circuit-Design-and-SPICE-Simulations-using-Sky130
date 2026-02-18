@@ -458,3 +458,12 @@ Vin in 0 1.8
 ## SPICE simulation for lower nodes and velocity saturation effect
 
 ## Lecture 1: WSPICE simulation for lower nodes
+
+- w=5um and L = 2nm : w/L = 2.5  <br/>
+
+<img width="800" height="800" alt="Screenshot 2026-02-17 182134" src="https://github.com/user-attachments/assets/2738a4c4-a233-4926-87a4-f5ef16929429" />  <br/>
+
+<img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/ab3d9d48-fd63-44c2-bc9f-ee408eb4ec8b" /> <br/>
+
+- To the left of the blue line, the drain current increases approximately linearly with drain voltage. In this region, the MOSFET operates in the linear (resistive) region
+- To the right of the blue line, the drain current is almost constant; however, a slight increase can be observed due to channel length modulation, indicating operation in the saturation region
