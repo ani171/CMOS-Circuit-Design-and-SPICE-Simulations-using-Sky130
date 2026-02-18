@@ -452,3 +452,9 @@ Vin in 0 1.8
 
 - A very small current can be observed for lower Vgs (Vgs=0.4V)
 - For the device to be ON, Vgs>= Vt, the current is very minimal, as the transistor is in the cut-off region
+
+## Day 2: Velocity saturation and basics of CMOS inverter VTC
+
+## SPICE simulation for lower nodes and velocity saturation effect
+
+## Lecture 1: WSPICE simulation for lower nodes
