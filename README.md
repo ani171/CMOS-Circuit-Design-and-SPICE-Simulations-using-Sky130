@@ -629,3 +629,22 @@ Vin in 0 1.8
 
 ## CMOS voltage transfer characteristics (VTC)
 ## Lecture 1: MOSFET as a switch
+- When |Vgs| < |Vt| → No inversion channel is formed → Device is OFF (open switch).
+- When |Vgs| > |Vt| → Inversion channel forms between source and drain.
+
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/33feb817-4f2c-4a8d-8e02-32ccaa1495f5" />  <br/>
+
+- Infinite OFF resistance when |Vgs| < |Vt| → Device behaves as an open circuit.
+- Finite ON resistance when |Vgs| > |Vt| → Device behaves as a closed switch
+
+#### Complementary MOS Transistors
+- Switch Operation (Vin = Vdd)
+- Vin = Vdd (logic high input)
+- PMOS acts as an OPEN switch (OFF state)
+- NMOS acts as a CLOSED switch (ON state)
+- Output node is connected to Vss through NMOS
+- Load capacitor CL discharges through NMOS
+- Output Vout goes to logic LOW (≈ 0 V)
+
+<img width="2125" height="1206" alt="image" src="https://github.com/user-attachments/assets/8bfbcb84-1d6a-4cbd-b2b6-41e20faa4cb2" />
+
