@@ -468,10 +468,48 @@ Vin in 0 1.8
 - To the left of the blue line, the drain current increases approximately linearly with drain voltage. In this region, the MOSFET operates in the linear (resistive) region
 - To the right of the blue line, the drain current is almost constant; however, a slight increase can be observed due to channel length modulation, indicating operation in the saturation region
 
-<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/7a330e54-9eb6-449b-8148-28fa99b4f8a4" /> <br/>
+- w=0.375u and L=0.25u
+
+<img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/69a58c20-12da-4cc1-8419-9265338e5ed2" />  <br/>
+
+- w=1.8u and L=1.2u
+
+<img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/76c5c87c-60ae-431d-90bb-302955636d8c" /> <br/>
 
 - Now, we choose different values of W and L, keeping the ratio W/L the same as before. Ideally, since Id ∝ (W/L), the drain current should remain unchanged.
 - However, in practice, the drain current does change due to second-order effects such as mobility degradation, channel length modulation, series resistance, and short-channel effects.
 - Below is the SPICE deck where only W and L values are modified, while all other parameters remain unchanged.
 
-## Lecture 2: Drain current vs gate voltage for long and short channel device
+## Lecture 2: Drain current vs gate voltage for long and short channel devices
+
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/6f0a039a-69ae-489d-bd00-7727217120ab" /> <br/>
+
+- For a long-channel device, observing Id at VDS = 2.5 V for different VGS values shows a quadratic dependence of Id on VGS (Id ∝ (VGS − Vt)²).
+- For a short-channel device at VDS = 2.5 V, the drain current increases approximately linearly with VGS due to velocity saturation, which limits carrier velocity and alters the ideal square-law behavior.
+
+#### Velocity Saturation effect
+- In short-channel MOSFETs, when the electric field becomes very high (due to large Vds), the carrier velocity does not keep increasing linearly with the field.
+- Normally, carrier velocity increases proportionally with electric field, but at high fields it reaches a maximum value called the saturation velocity (v_sat).
+- Because of this, the drain current no longer follows the ideal square-law relation Id ∝ (Vgs − Vt)².
+- Instead, in short-channel devices, the current becomes approximately linear with (Vgs − Vt) in saturation.
+
+#### Id vs Vgs graph
+- Keeping Vds constant at 2.5 V, Vgs is varied.
+- The corresponding drain current (Id) is plotted for both cases (long-channel and short-channel devices).
+
+
+- w=1.8u and L=1.2u (Long channel)
+
+<img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/92bb5264-3f13-42b7-a281-f8c8a4be634d" /> <br/>
+
+<img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/5bb23b1f-3f43-4744-9e0c-05cc50047a64" /> <br/>
+
+- w= 0.375u and L=0.25u (Short channel)
+
+<img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/f68cc496-2835-47a1-ad6e-9f3472b18819" /> <br/>
+
+<img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/2c9222b2-c391-4dfa-8f84-09f1410833d2" />  <br/>
+
+<img width="1000" height="1000" alt="image" src="https://github.com/user-attachments/assets/e699a5a4-04e8-43b3-9443-c68c9e0b9b09" />
+
+
