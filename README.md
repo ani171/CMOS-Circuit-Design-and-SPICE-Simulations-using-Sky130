@@ -1,33 +1,36 @@
 # CMOS Circuit Design and SPICE Simulations
 
-## VirtualBox Setup
-This guide explains how to open the provided CMOS VDI file using Oracle VirtualBox.
+## VirtualBox installation
+1. Install VirtualBox
+    - Download and install the latest stable release of Oracle VirtualBox from the official website: ```https://www.virtualbox.org/wiki/Downloads```
+    - Ensure that virtualization is enabled in the system BIOS/UEFI before proceeding.
 
-#### 1. Install VirtualBox
-- Download and install Oracle VirtualBox: ```https://www.virtualbox.org/wiki/Downloads```
-#### 2. Create Virtual Machine
-1. Open **VirtualBox**
-2. Click **New**
-3. Set:
+2. Create a New Virtual Machine
+    1. Launch Oracle VirtualBox.
+    2. Click **New** to create a virtual machine instance.
+    3. Configure the following parameters:
 
-| Setting | Value |
-|----------|--------|
+| Parameter | Configuration |
+|------------|--------------|
+| Name | CMOS (or preferred VM name) |
 | Type | Linux |
 | Version | Ubuntu 18.04 Bionic Beaver (64-bit) |
 
-- Click **Next**
-
-#### 3. Allocate Memory
-- Assign RAM as required (Recommended: 4096 MB)
-- Click **Next**
-
-#### 4. Attach CMOS VDI File
-1. Select **Use an existing virtual hard disk file**
-2. Click the folder icon
-3. Browse to the unzipped CMOS VDI file
-4. Click **Open**
-5. Click **Next**
-6. Click **Finish**
+3. Configure Memory Allocation
+    - Allocate system memory (RAM) based on host capacity.
+    - Recommended allocation: **4096 MB (4 GB)** or higher for stable operation.
+    - Click **Next** to continue.
+4. Attach the Provided VDI File
+    1. Select **Use an existing virtual hard disk file**.
+    2. Click the folder icon to open the Virtual Media Manager.
+    3. Browse to the extracted CMOS VDI file location.
+    4. Select the `.vdi` file and click Open
+    5. Confirm the selection.
+    6. Click **Finish** to create the virtual machine.
+5. Launch the Virtual Machine
+    1. Select the newly created VM.
+    2. Click **Start**.
+    3. Log in using the credentials provided with the CMOS image.
 
 <img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/810667cd-80c8-464e-b38d-54e2b0d478f9" />
 
@@ -47,21 +50,24 @@ This guide explains how to open the provided CMOS VDI file using Oracle VirtualB
 
 <img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/73c5ea9b-62ea-4038-aa77-176a99e55680" /> <br/>
 
-- The above is a CMOS inverter. It is the most basic logic gate in digital electronics. It performs the NOT operation <br/>
-- Similarly, modifying the PDN and PUN networks involves various logic circuits that can be made <br/>
-- On feeding various input values to the logic circuit, we obtain its IV characteristics graph as shown below <br/>
+- The circuit shown above is a CMOS inverter, which serves as the fundamental building block of digital integrated circuits. It implements the logical NOT operation and forms the basis for more complex combinational and sequential logic systems. <br/>
+- By appropriately configuring the Pull-Up Network (PUN) and Pull-Down Network (PDN), a wide range of logic gates such as NAND, NOR, and complex logic functions can be realized. These complementary networks define the Boolean functionality of the circuit. <br/>
+- By applying different input voltage levels and sweeping the input across its operating range, the corresponding output response can be measured to obtain the voltage transfer characteristics (VTC) or I–V characteristics of the logic gate, as illustrated below. <br/>
 
 <img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/f0c3abb4-1ba3-4fac-8768-3c4e76df4ebb" /> <br/>
 
-- By simulating and merging the PMOS and NMOS responses, the corresponding SPICE waveform is obtained <br/>
+- The combined switching behavior of the PMOS and NMOS devices is captured through SPICE simulation, resulting in the corresponding composite waveform <br/>
 
 <img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/0d2227d6-7832-4d98-a2f9-ec890b895fca" /> <br/>
-- The propagation delay extracted from this waveform can be used to optimize the Wn/Wp ratio, enabling further tuning of the delay model <br/>
-- Suppose we perform Clock Tree Synthesis (CTS) on the circuit shown below, inserting buffers to drive different capacitive loads at the output <br/>
+
+- The propagation delay extracted from the simulated waveform is used to optimize the NMOS-to-PMOS width ratio (Wn/Wp), allowing accurate delay balancing and refinement of the timing model. Proper sizing ensures symmetric rise and fall delays and improves overall switching performance. <br/>
+
+- During Clock Tree Synthesis (CTS), buffers are strategically inserted to distribute the clock signal while driving varying capacitive loads at different nodes. This buffering minimizes clock skew, controls insertion delay, and maintains signal integrity across the clock network. <br/>
 
 <img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/b289b3a4-f12c-45ea-a5e6-e85a157d9704" /> <br/>
 
 - From these spice simulations, we obtain a delay table that includes the input slew and output load <br/>
+
 <img width="2141" height="518" alt="image" src="https://github.com/user-attachments/assets/fdcd03b7-3d62-43ea-94e5-b42515b9f25e" /> <br/>
 
 - Select the row corresponding to the input slew and the column corresponding to the output load; their intersection gives the cell delay value <br/>
@@ -71,7 +77,7 @@ This guide explains how to open the provided CMOS VDI file using Oracle VirtualB
 
 ## Lecture 2: Introduction to basic elements in Circuit Design - NMOS
 ### N-channel Metal Oxide Semiconductor 
-- 4-terminal device <br/>
+- NMOS is a 4-terminal device consisting of Gate (G), Drain (D), Source (S), and Body (B). The device operates by forming an inversion channel between source and drain when Vgs exceeds the threshold voltage <br/>
 
 | Component | Description | Key Notes |
 |------------|-------------|-----------|
