@@ -639,13 +639,19 @@ Vin in 0 1.8
 - Finite ON resistance when |Vgs| > |Vt| → Device behaves as a closed switch
 
 #### Complementary MOS Transistors
-- Switch Operation (Vin = Vdd)
-- Vin = Vdd (logic high input)
-- PMOS acts as an OPEN switch (OFF state)
-- NMOS acts as a CLOSED switch (ON state)
-- Output node is connected to Vss through NMOS
-- Load capacitor CL discharges through NMOS
-- Output Vout goes to logic LOW (≈ 0 V)
+### Case 1: Vin = Vdd (Input High)
 
-<img width="2125" height="1206" alt="image" src="https://github.com/user-attachments/assets/8bfbcb84-1d6a-4cbd-b2b6-41e20faa4cb2" />
+- When the input Vin is equal to Vdd, the PMOS transistor turns OFF because its gate-to-source voltage becomes zero. At the same time, the NMOS transistor turns ON since its gate-to-source voltage equals Vdd and exceeds the threshold voltage.
+- In this condition, the PMOS behaves like an open switch and the NMOS behaves like a closed switch. As a result, the output node is connected to Vss through the NMOS, and the load capacitor discharges.
+- Therefore, the output voltage Vout becomes logic LOW.
 
+### Case 2: Vin = 0 (Input Low)
+
+- When the input Vin is equal to 0 V, the NMOS transistor turns OFF because its gate-to-source voltage is zero. Meanwhile, the PMOS transistor turns ON since its gate-to-source voltage equals Vdd in magnitude and exceeds the threshold voltage. 
+- In this case, the NMOS behaves like an open switch and the PMOS behaves like a closed switch. Consequently, the output node is connected to Vdd through the PMOS, and the load capacitor charges.
+- Therefore, the output voltage Vout becomes logic HIGH.
+
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/8bfbcb84-1d6a-4cbd-b2b6-41e20faa4cb2" />
+
+## Lecture 2: Introduction to standard MOS voltage current parameters
