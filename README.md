@@ -434,7 +434,8 @@ Vin in 0 1.8
 <img width="300" height="300" alt="image" src="https://github.com/user-attachments/assets/09938891-901c-44c7-9c65-097ac5d1a844" />
 
 ## Lecture 5: SPICE Lab with sky130 models
-- Open ```sky130.lib.space``` file in ```models``` 
+- Open ```sky130.lib.space``` file in ```models``` <br/>
+
 <img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/df4bc6b1-3aca-4e97-bab3-13a50ea3aa2a" />  <br/>
 
 <img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/1e7970c8-afcc-4997-9d6c-4506d7f8108d" /> <br/>
@@ -587,7 +588,7 @@ Vin in 0 1.8
 
 ## Lecture 5: Labs Sky130 Id-Vgs
 #### Id vs Vds
-- Open ```day2_nfet_idvds_L015_W039.spice```
+- Open ```day2_nfet_idvds_L015_W039.spice``` <br/>
 
 <img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/4b5f41a2-9aff-424f-986f-c0c2c174d738" /> <br/>
 
