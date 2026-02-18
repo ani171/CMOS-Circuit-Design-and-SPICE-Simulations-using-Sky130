@@ -467,3 +467,11 @@ Vin in 0 1.8
 
 - To the left of the blue line, the drain current increases approximately linearly with drain voltage. In this region, the MOSFET operates in the linear (resistive) region
 - To the right of the blue line, the drain current is almost constant; however, a slight increase can be observed due to channel length modulation, indicating operation in the saturation region
+
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/7a330e54-9eb6-449b-8148-28fa99b4f8a4" /> <br/>
+
+- Now, we choose different values of W and L, keeping the ratio W/L the same as before. Ideally, since Id ∝ (W/L), the drain current should remain unchanged.
+- However, in practice, the drain current does change due to second-order effects such as mobility degradation, channel length modulation, series resistance, and short-channel effects.
+- Below is the SPICE deck where only W and L values are modified, while all other parameters remain unchanged.
+
+## Lecture 2: Drain current vs gate voltage for long and short channel device
