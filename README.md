@@ -575,3 +575,57 @@ Vin in 0 1.8
 
 <img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/59c16b70-770a-4388-939f-c534726b0de1" />
 
+<img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/1be510ce-cafe-424e-a1da-5b1091844b1a" />
+
+- The saturation current for lower technology nodes is comparatively smaller instead of larger.
+- This occurs due to the velocity saturation effect, which becomes more dominant in short-channel devices.
+- In lower nodes, the electric field along the channel becomes very high even at small Vds. As a result, carrier velocity reaches its saturation value earlier.
+- Since carrier velocity cannot increase beyond the saturation velocity, the drain current stops increasing proportionally.
+- Therefore, the peak (saturation) current observed in lower nodes is significantly less compared to higher (long-channel) nodes.
+
+<img width="600" height="600" alt="image" src="https://github.com/user-attachments/assets/f80dfba4-8413-4ff9-9fb0-b6e749416536" />
+
+## Lecture 5: Labs Sky130 Id-Vgs
+#### Id vs Vds
+- Open ```day2_nfet_idvds_L015_W039.spice```
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/4b5f41a2-9aff-424f-986f-c0c2c174d738" /> <br/>
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/5f87e6c5-19d8-4cdd-9fa7-9a3842e856dd" /> <br/>
+
+- w=0.39u and L=0.15u
+- Perform DC simulation using ```ngspice```
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/d9a4bf5c-5bda-4793-a43d-3a478b9c83d1" />  <br/>
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/3fbda566-0c16-48cf-8178-04412b18b9b9" /> <br/>
+
+- For lower values of Vgs (just above Vt), the drain current shows a quadratic behavior with respect to (Vgs − Vt).
+- For higher values of Vgs, the behavior becomes more linear, mainly due to velocity saturation effects in short-channel devices.
+- Peak current is about 197uA
+
+<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/f4a9996f-b69b-4a44-9715-009eb300457b" /> <br/>
+
+#### Id vs Vgs
+- Open ```day2_nfet_idvgs_L015_W039.spice```
+- Perform DC simulation using ```ngspice```  <br/>
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/f6ec26a3-892a-46a3-8960-dcb3ed33da04" /> <br/>
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/61fc6887-cfc1-4738-8903-3012be506a3b" /> <br/>
+
+## Lecture 6: Labs Sky130 Vt
+- Open ```day2_nfet_idvgs_L015_W039.spice```
+- Run ```ngspice```
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/9e8a6845-3c6e-4dad-b344-99154f0a187c" /> <br/>
+
+- Plot Id current (vdd-branch)
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/1a0da406-0d8b-4a6b-9b02-62016fd36164" />  <br/>
+
+- Threshold voltage (Vt) is obtained by drawing a tangent at the maximum slope of the Id–Vgs curve and extending it to intersect the Vgs axis
+- Threshold voltage, ```Vt=0.737V```
+
+## CMOS voltage transfer characteristics (VTC)
+## Lecture 1: MOSFET as a switch
