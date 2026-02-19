@@ -782,3 +782,7 @@ Vin in 0 1.8
 | 2       | 0              | Linear      | Cutoff      |
 
 <img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/becc7f26-481b-4e25-b3a0-dd739c1bcc18" />
+
+## NgspiceSky130 - Day 3 - CMOS Switching threshold and dynamic simulations
+## Voltage transfer characteristics – SPICE simulations
+## Lecture 1: SPICE deck creation for CMOS inverter
