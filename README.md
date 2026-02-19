@@ -720,7 +720,7 @@ Vin in 0 1.8
 | Vgsp4| -1.5| 0.5 |
 | Vgsp5| -2 | 0 |
 
--By modifying the PMOS transfer characteristics using ```Vgsp = Vin-Vdd``` and ```Idsp = -Idsn```, the PMOS curve can be expressed in terms of the same variables used for the NMOS, enabling direct comparison and combination.
+- By modifying the PMOS transfer characteristics using ```Vgsp = Vin-Vdd``` and ```Idsp = -Idsn```, the PMOS curve can be expressed in terms of the same variables used for the NMOS, enabling direct comparison and combination.
 
 <img width="900" height="700" alt="image" src="https://github.com/user-attachments/assets/ce4a0eea-aa0d-44c1-8bd0-f1472dc89517" /> <br/>
 
@@ -758,3 +758,27 @@ Vin in 0 1.8
 <img width="1000" height="700" alt="image" src="https://github.com/user-attachments/assets/c3d08d9e-dae4-4426-aa83-ef8bf647bd90" /> <br/>
 
 ## Lecture 6: Step4 – Merge PMOS – NMOS load curves and plot VTC
+- By appropriately superimposing the PMOS and NMOS load curves under the condition that their drain currents are equal in magnitude and opposite in direction, the CMOS Voltage Transfer Characteristics (VTC) are obtained
+
+<img width="800" height="700" alt="image" src="https://github.com/user-attachments/assets/6f2c97d1-e17c-4e40-9297-67caf5ded14c" /> <br/>
+
+- To obtain the CMOS Voltage Transfer Characteristics (VTC), the NMOS and PMOS load curves are superimposed. The operating point for each value of Vin is determined by the condition where the magnitude of NMOS and PMOS drain currents are equal
+
+<img width="600" height="600" alt="image" src="https://github.com/user-attachments/assets/6fe2f3c6-8352-433a-9604-7ad2e1bb86ee" /> <br/>
+
+- Since Vdd = 2 V, both Vin and Vout vary within the range 0 V to 2 V
+    - When Vin = 0 V, Vout = 2 V. The NMOS is in cutoff, and the PMOS operates in the linear region.
+    - When Vin = 0.5 V, Vout lies between 1.5 V and 2 V. The NMOS operates in saturation, while the PMOS remains in the linear region.
+    - When Vin = 1 V, Vout lies approximately between 0.5 V and 1.5 V. Both NMOS and PMOS operate in saturation.
+    - When Vin = 1.5 V, Vout lies between 0 V and 0.5 V. The NMOS operates in the linear region, while the PMOS operates in saturation.
+    - When Vin = 2 V, Vout = 0 V. The NMOS operates in the linear region, and the PMOS is in cutoff.
+
+| Vin (V) | Vout (V) Range | NMOS Region | PMOS Region |
+| ------- | -------------- | ----------- | ----------- |
+| 0       | 2              | Cutoff      | Linear      |
+| 0.5     | 1.5 – 2        | Saturation  | Linear      |
+| 1       | 0.5 – 1.5      | Saturation  | Saturation  |
+| 1.5     | 0 – 0.5        | Linear      | Saturation  |
+| 2       | 0              | Linear      | Cutoff      |
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/becc7f26-481b-4e25-b3a0-dd739c1bcc18" />
