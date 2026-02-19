@@ -664,5 +664,15 @@ Vin in 0 1.8
 - To derive the equivalent circuit of the CMOS inverter, the input is evaluated at logic HIGH and logic LOW conditions. This allows extraction of the Voltage Transfer Characteristics (VTC) and subsequent estimation of cell delay.
     - When Vin = Vdd (logic HIGH), the PMOS transistor is in cutoff (OFF state) and the NMOS transistor operates in the ON state. The output node is connected to ground through the NMOS, forming the pull-down equivalent circuit.
     - When Vin = 0 (logic LOW), the NMOS transistor is in cutoff (OFF state) and the PMOS transistor operates in the ON state. The output node is connected to Vdd through the PMOS, forming the pull-up equivalent circuit.
-<img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/a2132ee6-dbb4-4d7c-a891-5654563e57ed" />
+  
+<img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/a2132ee6-dbb4-4d7c-a891-5654563e57ed" /> <br/>
+
+- During steady-state operation (static HIGH or LOW), only one device conducts at a time.
+- In dynamic switching conditions, the instantaneous currents satisfy: ```Idsp = −Idsn``` indicating that the currents are equal in magnitude and opposite in direction at the output node (by Kirchhoff’s Current Law).
+
+<img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/db0be880-1ec4-426c-bc18-6dd2ee212f41" /> <br/>
+
+#### CMOS Naming convention
+
+<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/6fa00e5a-fc21-472f-b9ef-a2c7f906319f" />
 
