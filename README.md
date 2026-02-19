@@ -661,3 +661,8 @@ Vin in 0 1.8
 <img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/8bfbcb84-1d6a-4cbd-b2b6-41e20faa4cb2" />
 
 ## Lecture 2: Introduction to standard MOS voltage current parameters
+- To derive the equivalent circuit of the CMOS inverter, the input is evaluated at logic HIGH and logic LOW conditions. This allows extraction of the Voltage Transfer Characteristics (VTC) and subsequent estimation of cell delay.
+    - When Vin = Vdd (logic HIGH), the PMOS transistor is in cutoff (OFF state) and the NMOS transistor operates in the ON state. The output node is connected to ground through the NMOS, forming the pull-down equivalent circuit.
+    - When Vin = 0 (logic LOW), the NMOS transistor is in cutoff (OFF state) and the PMOS transistor operates in the ON state. The output node is connected to Vdd through the PMOS, forming the pull-up equivalent circuit.
+<img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/a2132ee6-dbb4-4d7c-a891-5654563e57ed" />
+
