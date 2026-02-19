@@ -450,7 +450,8 @@ Vin in 0 1.8
 
 - The scale in which the parameter dimensions are defined can be obtained in the ```all.spice``` file <br/>
 
-- Cut off region analysis
+- Cut off region analysis <br/>
+
 <img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/9d8e8aa3-c0d8-48fb-a80a-458f474f1655" /> <br/>
 
 <img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/2dbf88d9-05a6-40a6-b4d0-d031f38b3cc6" /> <br/>
@@ -489,7 +490,7 @@ Vin in 0 1.8
 
 ## Lecture 2: Drain current vs gate voltage for long and short channel devices
 
-<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/6f0a039a-69ae-489d-bd00-7727217120ab" /> <br/>
+<img width="1000" height="1000" alt="image" src="https://github.com/user-attachments/assets/6f0a039a-69ae-489d-bd00-7727217120ab" /> <br/>
 
 - For a long-channel device, observing Id at VDS = 2.5 V for different VGS values shows a quadratic dependence of Id on VGS (Id ∝ (VGS − Vt)²).
 - For a short-channel device at VDS = 2.5 V, the drain current increases approximately linearly with VGS due to velocity saturation, which limits carrier velocity and alters the ideal square-law behavior.
