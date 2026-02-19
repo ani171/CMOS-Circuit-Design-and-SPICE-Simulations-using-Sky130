@@ -1,6 +1,45 @@
 # CMOS Circuit Design and SPICE Simulations
 
-## VirtualBox installation
+- [VirtualBox installation](#virtualbox-installation)
+- [Day 1: NgSpiceSky130 - Basics of NMOS Drain Current (Id) vs Drain to Source Voltage (Vds)](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#day-1-ngspicesky130---basics-of-nmos-drain-current-id-vs-drain-to-source-voltage-vds)
+  * [Introduction to Circuit Design and SPICE Simulations](#introduction-to-circuit-design-and-spice-simulations)
+    + [Lecture 1: Why is SPICE Simulation needed?](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-1-why-is-spice-simulation-needed)
+    + [Lecture 2: Introduction to basic elements in Circuit Design - NMOS](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-2-introduction-to-basic-elements-in-circuit-design---nmos)
+    + [Lecture 3: Strong Inversion](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-3-strong-inversion)
+    + [Lecture 4: Threshold voltage with positive substrate potential](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-4-threshold-voltage-with-positive-substrate-potential)
+  * [NMOS resistive region and saturation region of operation](#nmos-resistive-region-and-saturation-region-of-operation)
+    + [Lecture 1: Resistive region of operation with small drain-source voltage](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-1-resistive-region-of-operation-with-small-drain-source-voltage)
+    + [Lecture 2: Drift current theory](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-2-drift-current-theory)
+    + [Lecture 3: Drain current model for linear region of operation](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-3-drain-current-model-for-linear-region-of-operation)
+    + [Lecture 4: SPICE conclusion to resistive operation](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-4-spice-conclusion-to-resistive-operation)
+    + [Lecture 5: Pinch-off region condition](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-5-pinch-off-region-condition)
+    + [Lecture 6: Drain current model for saturation region of operation](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-6-drain-current-model-for-saturation-region-of-operation)
+  * [Introduction to SPICE](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#introduction-to-spice)
+    + [Lecture 1: Basic SPICE setup](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-1-basic-spice-setup)
+    + [Lecture 2: Circuit description in SPICE syntax](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-2-circuit-description-in-spice-syntax)
+    + [Lecture 3: Define technology parameters](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-3-define-technology-parameters)
+    + [Lecture 4: First SPICE simulation](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-4-first-spice-simulation)
+    + [Lecture 5: SPICE Lab with sky130 models](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-5-spice-lab-with-sky130-models)
+- [Day 2: Velocity saturation and basics of CMOS inverter VTC](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#day-2-velocity-saturation-and-basics-of-cmos-inverter-vtc)
+  * [SPICE simulation for lower nodes and velocity saturation effect](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#spice-simulation-for-lower-nodes-and-velocity-saturation-effect)
+    + [Lecture 1: WSPICE simulation for lower nodes](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-1-wspice-simulation-for-lower-nodes)
+    + [Lecture 2: Drain current vs gate voltage for long and short channel devices](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-2-drain-current-vs-gate-voltage-for-long-and-short-channel-devices)
+    + [Lecture 3: Velocity saturation at lower and higher electric fields](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-3-velocity-saturation-at-lower-and-higher-electric-fields)
+    + [Lecture 4: Velocity saturation drain current model](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-4-velocity-saturation-drain-current-model)
+    + [Lecture 5: Labs Sky130 Id-Vgs](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-5-labs-sky130-id-vgs)
+    + [Lecture 6: Labs Sky130 Vt](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-6-labs-sky130-vt)
+  * [CMOS voltage transfer characteristics (VTC)](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#cmos-voltage-transfer-characteristics-vtc)
+    + [Lecture 1: MOSFET as a switch](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-1-mosfet-as-a-switch)
+    + [Lecture 2: Introduction to standard MOS voltage current parameters](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-2-introduction-to-standard-mos-voltage-current-parameters)
+    + [Lecture 3: PMOS/NMOS drain current v/s drain voltage](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-3-pmosnmos-drain-current-vs-drain-voltage)
+    + [Lecture 4: Step1 – Convert PMOS gate-source-voltage to Vin](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-4-step1--convert-pmos-gate-source-voltage-to-vin)
+    + [Lecture 5: Step2 & Step3 – Convert PMOS and NMOS drain-source-voltage to vout](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-5-step2--step3--convert-pmos-and-nmos-drain-source-voltage-to-vout)
+    + [Lecture 6: Step4 – Merge PMOS – NMOS load curves and plot VTC](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-6-step4--merge-pmos--nmos-load-curves-and-plot-vtc)
+- [Day 3 - CMOS Switching threshold and dynamic simulations](#day-3---cmos-switching-threshold-and-dynamic-simulations)
+  * [Voltage transfer characteristics – SPICE simulations](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#voltage-transfer-characteristics--spice-simulations)
+    + [Lecture 1: SPICE deck creation for CMOS inverter](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-1-spice-deck-creation-for-cmos-inverter)
+
+# VirtualBox installation
 1. Install VirtualBox
     - Download and install the latest stable release of Oracle VirtualBox from the official website: ```https://www.virtualbox.org/wiki/Downloads```
     - Ensure that virtualization is enabled in the system BIOS/UEFI before proceeding.
@@ -39,11 +78,11 @@
 1. Select the created VM
 2. Click **Start**
 
-## Day 1: NgSpiceSky130 - Basics of NMOS Drain Current (Id) vs Drain to Source Voltage (Vds)
+# Day 1: NgSpiceSky130 - Basics of NMOS Drain Current (Id) vs Drain to Source Voltage (Vds)
 
 ## Introduction to Circuit Design and SPICE Simulations
 
-## Lecture 1: Why is SPICE Simulation needed?
+### Lecture 1: Why is SPICE Simulation needed?
 - to verify circuit behavior
 - optimize performance
 - identify flaws before physical prototyping <br/>
@@ -75,8 +114,8 @@
 - Each delay table corresponds to a different Wn/Wp ratio, so variations between tables reflect the impact of transistor sizing on propagation delay <br/>
 - SPICE simulations basically involve characterizing the NMOS and PMOS in detail, thus optimizing the delay model <br/>
 
-## Lecture 2: Introduction to basic elements in Circuit Design - NMOS
-### N-channel Metal Oxide Semiconductor 
+### Lecture 2: Introduction to basic elements in Circuit Design - NMOS
+#### N-channel Metal Oxide Semiconductor 
 - NMOS is a 4-terminal device consisting of Gate (G), Drain (D), Source (S), and Body (B). The device operates by forming an inversion channel between source and drain when Vgs exceeds the threshold voltage <br/>
 
 | Component | Description | Key Notes |
@@ -111,7 +150,7 @@
 
 <img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/f15ecc07-48e5-4894-acc3-e2461cd3baec" /> <br/>
 
-## Lecture 3: Strong Inversion
+### Lecture 3: Strong Inversion
 - Increasing the gate voltage Vgs, the electric field across the oxide strengthens.
 - More holes are pushed away from the surface, expanding the depletion region.
 - When Vgs increases further, electrons accumulate at the surface and form an n-type inversion layer. This is called **strong inversion** or **surface inversion**
@@ -132,7 +171,7 @@
 
 <img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/88327cd7-25cb-4ab5-baca-e9ba650f9cf2" /> <br/>
 
-## Lecture 4: Threshold voltage with positive substrate potential
+### Lecture 4: Threshold voltage with positive substrate potential
 - As VGS increases, the electric field across the oxide increases, and the depletion region beneath the gate expands in both cases (VSB = 0 and VSB > 0).
 - When VSB is positive, the source–body junction becomes more reverse-biased. This increases the electric field between the source and the p-substrate, pulling more holes (positive charges) away from the surface and deeper into the substrate.
 - Because more holes are removed from the surface, the depletion region becomes wider compared to the VSB = 0 case. This means a larger amount of negative fixed charge (ionized acceptor ions) is left behind near the surface.
@@ -159,7 +198,7 @@
 - These values are obtained from the foundry and fed into the SPICE model for device modelling and simulation
 
 ## NMOS resistive region and saturation region of operation
-## Lecture 1: Resistive region of operation with small drain-source voltage
+### Lecture 1: Resistive region of operation with small drain-source voltage
 - On increasing VGS > Vt, the channel charge density increases
 - In the channel, the induced charge Qi is directly proportional to (Vgs - Vt). This excess voltage, known as the overdrive voltage, creates additional mobile electrons in the channel, increasing the drain current.  <br/>
 
@@ -182,7 +221,7 @@
 
 <img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/7728045d-565e-4360-a89f-7d23a46edf07" />
 
-## Lecture 2: Drift current theory
+### Lecture 2: Drift current theory
 - In the channel (yellow region below), the induced inversion charge at any point x depends on the local gate overdrive voltage.
 - Since the channel potential varies along its length, the effective gate voltage at position x is VGS − V(x).
 - Therefore, the inversion charge per unit area at point x is proportional to the local overdrive voltage  <br/>
@@ -201,7 +240,7 @@
 
 <img width="700" height="800" alt="image" src="https://github.com/user-attachments/assets/8ca8f8bd-3c14-4416-b3bb-4a74467fa8a2" />
 
-## Lecture 3: Drain current model for linear region of operation
+### Lecture 3: Drain current model for linear region of operation
 
 <img width="700" height="800" alt="image" src="https://github.com/user-attachments/assets/f9f14a0b-88c8-42a1-9881-275c03df6fcb" /> <br/>
 
@@ -216,7 +255,7 @@
 - Therefore, for all values of VDS ≤ (VGS − Vt), the MOSFET operates in the resistive (linear) region.
 - In this region, the channel is continuous from source to drain, and the device behaves like a voltage-controlled resistor.
 
-## Lecture 4: SPICE conclusion to resistive operation
+### Lecture 4: SPICE conclusion to resistive operation
 - To analyze the impact of VGS and VDS on the drain current (ID), we consider different values of both voltages.
 - For a given VGS, the device remains in the linear (triode) region as long as: VDS < (VGS − Vt).
 - To calculate ID for different values of VGS, we fix a particular VGS and then sweep VDS from 0 up to (VGS − Vt).
@@ -224,7 +263,7 @@
   
 <img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/c7f604bc-7e9f-48fb-a48b-a6753add9850" />
 
-## Lecture 5: Pinch-off region condition
+### Lecture 5: Pinch-off region condition
 - When (VGS − VDS) > Vt, the effective gate voltage at the drain end is still greater than the threshold voltage. This means inversion is maintained even at the drain side
 - Since inversion exists along the entire channel from source (x = 0) to drain (x = L), a continuous conducting path connects source and drain.
 - In this condition, the device operates in the linear (triode) region, and the drain current increases approximately linearly with VDS for small values of VDS.
@@ -244,7 +283,7 @@
 
 <img width="1000" height="900" alt="image" src="https://github.com/user-attachments/assets/e8735840-bd6f-49a4-8b28-d5d8795cdb3d" />
 
-## Lecture 6: Drain current model for saturation region of operation
+### Lecture 6: Drain current model for saturation region of operation
 - When (VGS − VDS) ≤ Vt, the channel disappears at the drain side 
 - In saturation, the channel voltage remains approximately constant at (VGS − Vt), unlike the linear region where it varies with V(x)
 - The drain current ideally becomes independent of VDS and depends mainly on (VGS − Vt), assuming channel length modulation is neglected <br/>
@@ -260,7 +299,7 @@
 <img width="700" height="350" alt="image" src="https://github.com/user-attachments/assets/869dd17e-c959-4948-b493-f787e2c240a5" />
 
 ## Introduction to SPICE
-## Lecture 1: Basic SPICE setup
+### Lecture 1: Basic SPICE setup
 - SPICE uses predefined device models to represent transistors and other circuit elements accurately.
 - The user provides circuit inputs through a netlist, which describes the components and their connections.
 - SPICE then simulates the circuit and generates waveforms and output data.
@@ -291,7 +330,7 @@
 
 <img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/b441358f-688c-43c7-b7ad-74c95d9f6411" />
 
-## Lecture 2: Circuit description in SPICE syntax
+### Lecture 2: Circuit description in SPICE syntax
 1. Analyse and note all parameter values
 
 <img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/fbab34c1-4268-4f01-93fe-34b62e8a043e" />
@@ -316,7 +355,7 @@
     - nmos → Model name (From the technology file)
     - W=1.8u L=1.2u → Device dimensions
 - **Common Nomenclature** (for MOS): ```Device_name Drain_pin Gate_pin Source_pin Body_pin Model_name Device_dimensions```
-### Netlist
+#### Netlist
 ```
 M1 vdd n1 0 0 nmos W=1.8u L=1.2u  
 R1 in n1 55  
@@ -326,7 +365,7 @@ Vin in 0 2.5
 
 <img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/45e92aa6-5916-4f53-8b8d-074c08e2d59b" />
 
-## Lecture 3: Define technology parameters
+### Lecture 3: Define technology parameters
 - Defining and evaluating the model: The MOSFET model (nmos) is defined in the technology/model file, where all device parameters (VTO, kn′, γ, λ, etc.) are specified. The SPICE engine uses this model to compute device behavior.
 - For smaller technology nodes, higher accuracy in parameter extraction is required because short-channel effects and non-idealities become more significant.
 - The model name used in the MOSFET line (e.g., nmos) must exactly match the name defined in the netlist (model definition statement)
@@ -356,7 +395,7 @@ Vin in 0 2.5
 - This links the circuit netlist to the technology model definitions.
 - After including the model file, we can perform DC sweeps of VGS and VDS to obtain the device characteristics.
 
-## Lecture 4: First SPICE simulation
+### Lecture 4: First SPICE simulation
 1. Open VirtualBox
 2. Git clone ```git clone https://github.com/kunalg123/sky130CircuitDesignWorkshop.git```
 
@@ -440,7 +479,7 @@ Vin in 0 1.8
 
 <img width="300" height="300" alt="image" src="https://github.com/user-attachments/assets/09938891-901c-44c7-9c65-097ac5d1a844" />
 
-## Lecture 5: SPICE Lab with sky130 models
+### Lecture 5: SPICE Lab with sky130 models
 - Open ```sky130.lib.space``` file in ```models``` <br/>
 
 <img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/df4bc6b1-3aca-4e97-bab3-13a50ea3aa2a" />  <br/>
@@ -462,11 +501,11 @@ Vin in 0 1.8
 - A very small current can be observed for lower Vgs (Vgs=0.4V)
 - For the device to be ON, Vgs>= Vt, the current is very minimal, as the transistor is in the cut-off region
 
-## Day 2: Velocity saturation and basics of CMOS inverter VTC
+# Day 2: Velocity saturation and basics of CMOS inverter VTC
 
 ## SPICE simulation for lower nodes and velocity saturation effect
 
-## Lecture 1: WSPICE simulation for lower nodes
+### Lecture 1: WSPICE simulation for lower nodes
 
 - w=5um and L = 2nm : w/L = 2.5  <br/>
 
@@ -489,7 +528,7 @@ Vin in 0 1.8
 - However, in practice, the drain current does change due to second-order effects such as mobility degradation, channel length modulation, series resistance, and short-channel effects.
 - Below is the SPICE deck where only W and L values are modified, while all other parameters remain unchanged.
 
-## Lecture 2: Drain current vs gate voltage for long and short channel devices
+### Lecture 2: Drain current vs gate voltage for long and short channel devices
 
 <img width="1000" height="1000" alt="image" src="https://github.com/user-attachments/assets/6f0a039a-69ae-489d-bd00-7727217120ab" /> <br/>
 
@@ -531,7 +570,7 @@ Vin in 0 1.8
     - Deviation from square-law due to velocity saturation.
     - Id increases almost linearly with Vgs in saturation.
 
-## Lecture 3: Velocity saturation at lower and higher electric fields
+### Lecture 3: Velocity saturation at lower and higher electric fields
 
 - For a short-channel device, the Id vs Vgs curve shows more linear behavior as Vgs increases.
 - This happens due to the velocity saturation effect, where carrier velocity reaches its maximum limit at high electric fields, preventing the current from following the ideal quadratic relationship.
@@ -573,7 +612,7 @@ Vin in 0 1.8
 
 <img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/d49f67d8-f2b6-42bc-982d-684286567eb4" />
 
-## Lecture 4: Velocity saturation drain current model
+### Lecture 4: Velocity saturation drain current model
 
 - Define Vgt = Vgs − Vt (gate overdrive voltage), since analysis is performed at higher Vgs values.
 - The drain current equation is expressed in terms of Vgt.
@@ -594,7 +633,7 @@ Vin in 0 1.8
 
 <img width="600" height="600" alt="image" src="https://github.com/user-attachments/assets/f80dfba4-8413-4ff9-9fb0-b6e749416536" />
 
-## Lecture 5: Labs Sky130 Id-Vgs
+### Lecture 5: Labs Sky130 Id-Vgs
 #### Id vs Vds
 - Open ```day2_nfet_idvds_L015_W039.spice``` <br/>
 
@@ -623,7 +662,7 @@ Vin in 0 1.8
 
 <img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/61fc6887-cfc1-4738-8903-3012be506a3b" /> <br/>
 
-## Lecture 6: Labs Sky130 Vt
+### Lecture 6: Labs Sky130 Vt
 - Open ```day2_nfet_idvgs_L015_W039.spice```
 - Run ```ngspice```
 
@@ -637,7 +676,7 @@ Vin in 0 1.8
 - Threshold voltage, ```Vt=0.737V```
 
 ## CMOS voltage transfer characteristics (VTC)
-## Lecture 1: MOSFET as a switch
+### Lecture 1: MOSFET as a switch
 - When |Vgs| < |Vt| → No inversion channel is formed → Device is OFF (open switch).
 - When |Vgs| > |Vt| → Inversion channel forms between source and drain.
 
@@ -647,13 +686,13 @@ Vin in 0 1.8
 - Finite ON resistance when |Vgs| > |Vt| → Device behaves as a closed switch
 
 #### Complementary MOS Transistors
-### Case 1: Vin = Vdd (Input High)
+##### Case 1: Vin = Vdd (Input High)
 
 - When the input Vin is equal to Vdd, the PMOS transistor turns OFF because its gate-to-source voltage becomes zero. At the same time, the NMOS transistor turns ON since its gate-to-source voltage equals Vdd and exceeds the threshold voltage.
 - In this condition, the PMOS behaves like an open switch and the NMOS behaves like a closed switch. As a result, the output node is connected to Vss through the NMOS, and the load capacitor discharges.
 - Therefore, the output voltage Vout becomes logic LOW.
 
-### Case 2: Vin = 0 (Input Low)
+##### Case 2: Vin = 0 (Input Low)
 
 - When the input Vin is equal to 0 V, the NMOS transistor turns OFF because its gate-to-source voltage is zero. Meanwhile, the PMOS transistor turns ON since its gate-to-source voltage equals Vdd in magnitude and exceeds the threshold voltage. 
 - In this case, the NMOS behaves like an open switch and the PMOS behaves like a closed switch. Consequently, the output node is connected to Vdd through the PMOS, and the load capacitor charges.
@@ -662,7 +701,7 @@ Vin in 0 1.8
 
 <img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/8bfbcb84-1d6a-4cbd-b2b6-41e20faa4cb2" />
 
-## Lecture 2: Introduction to standard MOS voltage current parameters
+### Lecture 2: Introduction to standard MOS voltage current parameters
 - To derive the equivalent circuit of the CMOS inverter, the input is evaluated at logic HIGH and logic LOW conditions. This allows the extraction of the Voltage Transfer Characteristics (VTC) and the subsequent estimation of cell delay.
     - When Vin = Vdd (logic HIGH), the PMOS transistor is in cutoff (OFF state), and the NMOS transistor operates in the ON state. The output node is connected to ground through the NMOS, forming the pull-down equivalent circuit.
     - When Vin = 0 (logic LOW), the NMOS transistor is in cutoff (OFF state), and the PMOS transistor operates in the ON state. The output node is connected to Vdd through the PMOS, forming the pull-up equivalent circuit.
@@ -689,7 +728,7 @@ Vin in 0 1.8
 
 <img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/6fa00e5a-fc21-472f-b9ef-a2c7f906319f" />
 
-## Lecture 3: PMOS/NMOS drain current v/s drain voltage
+### Lecture 3: PMOS/NMOS drain current v/s drain voltage
 
 <img width="600" height="600" alt="image" src="https://github.com/user-attachments/assets/a4238ab3-3376-4d4c-b5a6-e9b0d70d2484" />
 
@@ -704,7 +743,7 @@ Vin in 0 1.8
 | At low Vdsn, the device operates in the linear region | At small \|Vdsp\|, it operates in the linear region |
 | At higher Vdsn, it enters saturation where the current becomes nearly constant | At larger \|Vdsp\|, it enters saturation where the current becomes nearly constant |
 
-## Lecture 4: Step1 – Convert PMOS gate-source-voltage to Vin
+### Lecture 4: Step1 – Convert PMOS gate-source-voltage to Vin
 
 - As a digital logic circuit, the CMOS inverter is characterized only by two measurable node voltages: Vin and Vout, since internal device node voltages cannot be directly observed.
 - Therefore, the voltage transfer characteristics (VTC) and delay modeling must be expressed purely as functions of Vin and Vout
@@ -727,7 +766,7 @@ Vin in 0 1.8
 - The Vgsp term is therefore eliminated by rewriting it in terms of Vin
 - The magnitude of Idsp remains equal to Idsn, but with opposite sign, ensuring current continuity at the output node
 
-## Lecture 5: Step2 & Step3 – Convert PMOS and NMOS drain-source-voltage to vout
+### Lecture 5: Step2 & Step3 – Convert PMOS and NMOS drain-source-voltage to vout
 - Since the transfer characteristics are still expressed as a function of Vdsp, which corresponds to an internal device voltage, it must be substituted in terms of external node variables.
 
 | Vdsp | V | Vout (Vdsp+Vdd) |
@@ -757,7 +796,7 @@ Vin in 0 1.8
 
 <img width="1000" height="700" alt="image" src="https://github.com/user-attachments/assets/c3d08d9e-dae4-4426-aa83-ef8bf647bd90" /> <br/>
 
-## Lecture 6: Step4 – Merge PMOS – NMOS load curves and plot VTC
+### Lecture 6: Step4 – Merge PMOS – NMOS load curves and plot VTC
 - By appropriately superimposing the PMOS and NMOS load curves under the condition that their drain currents are equal in magnitude and opposite in direction, the CMOS Voltage Transfer Characteristics (VTC) are obtained
 
 <img width="800" height="700" alt="image" src="https://github.com/user-attachments/assets/6f2c97d1-e17c-4e40-9297-67caf5ded14c" /> <br/>
@@ -783,6 +822,6 @@ Vin in 0 1.8
 
 <img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/becc7f26-481b-4e25-b3a0-dd739c1bcc18" />
 
-## NgspiceSky130 - Day 3 - CMOS Switching threshold and dynamic simulations
+# Day 3 - CMOS Switching threshold and dynamic simulations
 ## Voltage transfer characteristics – SPICE simulations
-## Lecture 1: SPICE deck creation for CMOS inverter
+### Lecture 1: SPICE deck creation for CMOS inverter
