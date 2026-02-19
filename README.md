@@ -705,3 +705,56 @@ Vin in 0 1.8
 | At higher Vdsn, it enters saturation where the current becomes nearly constant | At larger \|Vdsp\|, it enters saturation where the current becomes nearly constant |
 
 ## Lecture 4: Step1 – Convert PMOS gate-source-voltage to Vin
+
+- As a digital logic circuit, the CMOS inverter is characterized only by two measurable node voltages: Vin and Vout, since internal device node voltages cannot be directly observed.
+- Therefore, the voltage transfer characteristics (VTC) and delay modeling must be expressed purely as functions of Vin and Vout
+
+#### Deriving Voltage Transfer characteristics for static CMOS inverter
+- Let us assume that it is a long channel device and ```Vdd= 2V``` <br/>
+
+| Vgsp | V | Vin (Vgsp+Vdd) |
+|----| ----|----|
+| Vgsp1| 0 | 2 |
+| Vgsp2| -0.5 | 1.5 |
+| Vgsp3| -1 | 1 |
+| Vgsp4| -1.5| 0.5 |
+| Vgsp5| -2 | 0 |
+
+-By modifying the PMOS transfer characteristics using ```Vgsp = Vin-Vdd``` and ```Idsp = -Idsn```, the PMOS curve can be expressed in terms of the same variables used for the NMOS, enabling direct comparison and combination.
+
+<img width="900" height="700" alt="image" src="https://github.com/user-attachments/assets/ce4a0eea-aa0d-44c1-8bd0-f1472dc89517" /> <br/>
+
+- The Vgsp term is therefore eliminated by rewriting it in terms of Vin
+- The magnitude of Idsp remains equal to Idsn, but with opposite sign, ensuring current continuity at the output node
+
+## Lecture 5: Step2 & Step3 – Convert PMOS and NMOS drain-source-voltage to vout
+- Since the transfer characteristics are still expressed as a function of Vdsp, which corresponds to an internal device voltage, it must be substituted in terms of external node variables.
+
+| Vdsp | V | Vout (Vdsp+Vdd) |
+|----| ----|----|
+| Vdsp1| -2 | 0 |
+| Vdsp2| -1.5 | 0.5 |
+| Vdsp3| -1 | 1 |
+| Vdsp4| -0.5| 1.5 |
+| Vdsp5| 0 | 2 |
+
+- Rewriting Vdsp using the circuit-level relationship ```Vout = Vdd + Vdsp```, we obtain
+
+<img width="1000" height="700" alt="image" src="https://github.com/user-attachments/assets/fce9c30d-261f-4b5a-8f4b-97dd7ebc5c2d" /> <br/>
+
+- When Vout = 2 V (with Vdd = 2 V), the drain-to-source voltage of the PMOS becomes Vdsp = 0 V. Under this condition, the PMOS current becomes zero because there is no voltage drop across it. The output capacitor CL is fully charged, and no further current flows. This represents the steady-state HIGH output condition of the CMOS inverter.
+- When Vout = 0 V (with Vdd = 2 V), the magnitude of Vdsp becomes 2 V. In this condition, a finite current can flow depending on the applied Vin. Since the output node is at ground potential, the load capacitor CL is fully discharged. To transition the output back to HIGH, a charging current must flow from Vdd through the PMOS to charge CL
+- Similarly, the NMOS load curve can be derived using the relationships ```Vgsn = Vin``` and ```Vdsn = Vout```, the NMOS current equations can be rewritten entirely as functions of Vin and Vout
+
+
+| Vgsp | V | Vin (Vgsn) |
+|----| ----|----|
+| Vgsp1| 0 | 0 |
+| Vgsp2| 0.5 | 0.5 |
+| Vgsp3| 1 | 1 |
+| Vgsp4| 1.5| 1.5 |
+| Vgsp5| 2 | 2 |
+
+<img width="1000" height="700" alt="image" src="https://github.com/user-attachments/assets/c3d08d9e-dae4-4426-aa83-ef8bf647bd90" /> <br/>
+
+## Lecture 6: Step4 – Merge PMOS – NMOS load curves and plot VTC
