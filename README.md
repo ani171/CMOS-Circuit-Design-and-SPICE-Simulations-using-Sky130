@@ -221,27 +221,28 @@
 - For a given VGS, the device remains in the linear (triode) region as long as: VDS < (VGS − Vt).
 - To calculate ID for different values of VGS, we fix a particular VGS and then sweep VDS from 0 up to (VGS − Vt).
 - In this region, ID follows the linear-region equation, and SPICE simulations can be used to obtain and verify the ID–VDS characteristics for each VGS.
-<img width="700" height="200" alt="image" src="https://github.com/user-attachments/assets/c7f604bc-7e9f-48fb-a48b-a6753add9850" />
+  
+<img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/c7f604bc-7e9f-48fb-a48b-a6753add9850" />
 
 ## Lecture 5: Pinch-off region condition
 - When (VGS − VDS) > Vt, the effective gate voltage at the drain end is still greater than the threshold voltage. This means inversion is maintained even at the drain side
 - Since inversion exists along the entire channel from source (x = 0) to drain (x = L), a continuous conducting path connects source and drain.
 - In this condition, the device operates in the linear (triode) region, and the drain current increases approximately linearly with VDS for small values of VDS.
 
-<img width="1000" height="700" alt="image" src="https://github.com/user-attachments/assets/642a659d-11ae-4277-af57-a5127d9f2616" /> <br/>
+<img width="1000" height="900" alt="image" src="https://github.com/user-attachments/assets/642a659d-11ae-4277-af57-a5127d9f2616" /> <br/>
 
 - When (VGS − VDS) = Vt, the effective gate-to-channel voltage at the drain end becomes exactly equal to the threshold voltage required for surface inversion.
 - This means that at the drain end, the surface is just at the onset of inversion — the inversion charge density becomes zero at that point.
 - Since the inversion layer disappears at the drain side, *the channel no longer extends fully to the drain*. This is called **pinch-off**.
 - At pinch-off, the channel disappears only at the drain end, but the current does not stop flowing. Electrons reaching the pinch-off point are swept across the depletion region to the drain due to the strong electric field. As a result, the drain current no longer increases linearly with VDS
 
-<img width="1000" height="700" alt="image" src="https://github.com/user-attachments/assets/9d34e16f-3108-4459-8380-50276c28848c" />  <br/>
+<img width="1000" height="900" alt="image" src="https://github.com/user-attachments/assets/9d34e16f-3108-4459-8380-50276c28848c" />  <br/>
 
 - When VDS exceeds (VGS − Vt), the MOSFET enters the saturation region. At this point, the drain end no longer satisfies the inversion condition, and pinch-off occurs near the drain.
 - Since the local channel potential reduces the effective gate voltage, the effective overdrive at any point along the channel is given by (VGS − V(x)). As V(x) increases from source to drain, the inversion charge decreases toward the drain end.
 - As VDS increases further beyond (VGS − Vt), the pinch-off point moves slightly toward the source.
 
-<img width="1000" height="700" alt="image" src="https://github.com/user-attachments/assets/e8735840-bd6f-49a4-8b28-d5d8795cdb3d" />
+<img width="1000" height="900" alt="image" src="https://github.com/user-attachments/assets/e8735840-bd6f-49a4-8b28-d5d8795cdb3d" />
 
 ## Lecture 6: Drain current model for saturation region of operation
 - When (VGS − VDS) ≤ Vt, the channel disappears at the drain side 
@@ -250,13 +251,13 @@
 
 ``` Id = kn/2 (Vgs-Vt)^2``` <br/>
 
-<img width="700" height="250" alt="image" src="https://github.com/user-attachments/assets/11105eee-d639-4614-84b0-1aa2d9e63cc7" />  <br/>
+<img width="700" height="350" alt="image" src="https://github.com/user-attachments/assets/11105eee-d639-4614-84b0-1aa2d9e63cc7" />  <br/>
 
 - In saturation, the MOSFET ideally behaves like a constant current source.
 - However, the current is not completely independent of VDS. As VDS increases, the depletion region at the drain expands.
 - This expansion reduces the effective conductive channel length. As the effective channel length decreases, the drain current increases slightly with VDS. This effect is known as **channel length modulation**
 
-<img width="700" height="250" alt="image" src="https://github.com/user-attachments/assets/869dd17e-c959-4948-b493-f787e2c240a5" />
+<img width="700" height="350" alt="image" src="https://github.com/user-attachments/assets/869dd17e-c959-4948-b493-f787e2c240a5" />
 
 ## Introduction to SPICE
 ## Lecture 1: Basic SPICE setup
@@ -662,9 +663,9 @@ Vin in 0 1.8
 <img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/8bfbcb84-1d6a-4cbd-b2b6-41e20faa4cb2" />
 
 ## Lecture 2: Introduction to standard MOS voltage current parameters
-- To derive the equivalent circuit of the CMOS inverter, the input is evaluated at logic HIGH and logic LOW conditions. This allows extraction of the Voltage Transfer Characteristics (VTC) and subsequent estimation of cell delay.
-    - When Vin = Vdd (logic HIGH), the PMOS transistor is in cutoff (OFF state) and the NMOS transistor operates in the ON state. The output node is connected to ground through the NMOS, forming the pull-down equivalent circuit.
-    - When Vin = 0 (logic LOW), the NMOS transistor is in cutoff (OFF state) and the PMOS transistor operates in the ON state. The output node is connected to Vdd through the PMOS, forming the pull-up equivalent circuit.
+- To derive the equivalent circuit of the CMOS inverter, the input is evaluated at logic HIGH and logic LOW conditions. This allows the extraction of the Voltage Transfer Characteristics (VTC) and the subsequent estimation of cell delay.
+    - When Vin = Vdd (logic HIGH), the PMOS transistor is in cutoff (OFF state), and the NMOS transistor operates in the ON state. The output node is connected to ground through the NMOS, forming the pull-down equivalent circuit.
+    - When Vin = 0 (logic LOW), the NMOS transistor is in cutoff (OFF state), and the PMOS transistor operates in the ON state. The output node is connected to Vdd through the PMOS, forming the pull-up equivalent circuit.
   
 <img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/a2132ee6-dbb4-4d7c-a891-5654563e57ed" /> <br/>
 
@@ -674,6 +675,33 @@ Vin in 0 1.8
 <img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/db0be880-1ec4-426c-bc18-6dd2ee212f41" /> <br/>
 
 #### CMOS Naming convention
+- G = Gate  
+- S = Source  
+- D = Drain  
 
-<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/6fa00e5a-fc21-472f-b9ef-a2c7f906319f" />
+- Vgs = Gate-to-Source voltage  
+- Vds = Drain-to-Source voltage  
 
+- Vgsn = Gate-to-Source voltage of NMOS  
+- Vgsp = Gate-to-Source voltage of PMOS  
+- Vdsn = Drain-to-Source voltage of NMOS  
+- Vdsp = Drain-to-Source voltage of PMOS
+
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/6fa00e5a-fc21-472f-b9ef-a2c7f906319f" />
+
+## Lecture 3: PMOS/NMOS drain current v/s drain voltage
+
+<img width="600" height="600" alt="image" src="https://github.com/user-attachments/assets/a4238ab3-3376-4d4c-b5a6-e9b0d70d2484" />
+
+#### Deriving equations for Vgsn, Vgsp, Vdsn, and Vdsp
+
+<img width="600" height="600" alt="image" src="https://github.com/user-attachments/assets/dea48547-7675-4b39-8977-a931bf8944a2" /> <br/>
+
+| NMOS (Idsn vs Vgsn) | PMOS (Idsp vs Vgsp) |
+|-----|-----|
+| <img width="600" height="600" alt="image" src="https://github.com/user-attachments/assets/57e85516-1a9e-4d11-8d8e-58dae8fda3fe" /> | <img width="600" height="600" alt="image" src="https://github.com/user-attachments/assets/ddb7c1b2-5bb4-4c46-99d0-1a2daad86209" /> |
+| As Vgsn increases, the drain current Idsn increases | As the magnitude of Vgsp increases (more negative), Idsp increases in magnitude |
+| At low Vdsn, the device operates in the linear region | At small \|Vdsp\|, it operates in the linear region |
+| At higher Vdsn, it enters saturation where the current becomes nearly constant | At larger \|Vdsp\|, it enters saturation where the current becomes nearly constant |
+
+## Lecture 4: Step1 – Convert PMOS gate-source-voltage to Vin
