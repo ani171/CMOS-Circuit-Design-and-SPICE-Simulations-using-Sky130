@@ -1,4 +1,4 @@
-# CMOS Circuit Design and SPICE Simulations
+<img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/d01f11ea-064b-47b7-9d50-fb64ae0758d2" /># CMOS Circuit Design and SPICE Simulations
 
 ## Table of Contents
 
@@ -941,10 +941,12 @@ Vin in 0 2.5
 
 <img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/d16bbe58-8fa2-40f7-8e8f-6302fb208cc6" /> <br/>
 
-<img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/12fdc67e-7954-4098-be4b-d37e426248b4" />
+<img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/12fdc67e-7954-4098-be4b-d37e426248b4" /> <br/>
 
 - For rise delay and fall delay, consider 50% of the output voltage, i.e., at 0.9V (since Vdd = 1.8V).
 - Measure delay as: Propagation delay = t(out at 0.9V) − t(in at 0.9V)
 - Rise Delay (tpLH) = 2.482 ns − 2.15 ns = 0.333 ns
 - For fall delay, consider the falling transition at 0.9V.
 - Fall Delay (tpHL) = 4.334 ns − 4.050 ns = 0.285 ns
+
+<img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/ed839c5b-69c3-41ec-a376-ce158695aae7" /> <br/>
