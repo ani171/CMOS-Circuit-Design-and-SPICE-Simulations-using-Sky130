@@ -908,6 +908,7 @@ Vin in 0 2.5
 
 ### Lecture 3: Labs Sky130 SPICE simulation for CMOS
 
+- **Transfer characterstics plot**
 - Open ```day3_inv_vtc_Wp084_Wn036.spice```, Wn = 0.36u and Wp = 0.84u, Wp/Wn = 2.33
 
 <img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/23401738-7317-4c65-a501-455767792a95" /> <br/>
@@ -929,3 +930,21 @@ Vin in 0 2.5
 
 <img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/493682ef-3b85-4a92-aca3-664018faa041" /> <br/>
 
+- We get switching threshold around 0.867 V
+- **Transient analysis**
+- Open ```day3_inv_tran_Wp084_Wn036.spice```
+
+<img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/019eb01d-2ccc-423c-b79f-0d3b823e6ad2" />  <br/>
+
+- Run ```ngspice```
+- ```plot out vs time in``` in ngspice
+
+<img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/d16bbe58-8fa2-40f7-8e8f-6302fb208cc6" /> <br/>
+
+<img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/12fdc67e-7954-4098-be4b-d37e426248b4" />
+
+- For rise delay and fall delay, consider 50% of the output voltage, i.e., at 0.9V (since Vdd = 1.8V).
+- Measure delay as: Propagation delay = t(out at 0.9V) − t(in at 0.9V)
+- Rise Delay (tpLH) = 2.482 ns − 2.15 ns = 0.333 ns
+- For fall delay, consider the falling transition at 0.9V.
+- Fall Delay (tpHL) = 4.334 ns − 4.050 ns = 0.285 ns
