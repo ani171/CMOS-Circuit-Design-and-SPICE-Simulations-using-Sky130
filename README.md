@@ -868,7 +868,7 @@ M2 out in 0 0 nmos w=0.375 L=0.25
 
 ### Lecture 2: SPICE simulation for CMOS inverter
 
-<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/2711dc95-bf13-451d-ba8d-93de2779d56f" />
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/2711dc95-bf13-451d-ba8d-93de2779d56f" /> <br/>
 
 - **Spice deck** <br/>
 
@@ -879,11 +879,30 @@ M2 out in 0 0 nmos w=0.375 L=0.25
 cload out 0 10f
 
 Vdd vdd 0 2.5
-Vin vdd 0 2.5
+Vin in 0 2.5
 
 .op
-.dc Vin 0 2.5 2.5
+.dc Vin 0 2.5 0.5
 
 .LIB "tsmc_025um_model.mod" CMOS_MODELS
 .end
 ```
+
+- Since 0.375u does not fall within the allowed PMOS width design rules of the SkyWater SKY130 PDK, both transistor widths are updated to 0.7u while maintaining the channel length at 0.25u.  
+
+<img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/da63760a-5915-4ccd-bb3d-5c0e0b97b66a" /> <br/>
+
+<img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/064d4068-51ea-40d1-87f6-f3df4c108e9a" /> <br/>
+
+<img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/0b676fc1-1033-4bcf-94ea-fb8f6fe41978" /> <br/>
+
+- For Wn/Ln = 1.5 and Wp/Lp=2.5, Wn = 0.375u, Wp = 0.9375u, Ln,p=0.25  <br/>
+
+<img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/e3842e06-84df-4abe-b4aa-dde9c092ab30" /> <br/>
+
+<img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/7601b307-9a20-4b06-9d03-2fe48782772b" /> <br/>
+
+- The previous VTC curve is slightly left-shifted because the NMOS strength is higher than the PMOS strength in that configuration.
+- Since the NMOS has higher drive capability, the switching threshold shifts toward a lower input voltage, resulting in the leftward displacement of the transfer curve.
+
+### Lecture 3: Labs Sky130 SPICE simulation for CMOS
