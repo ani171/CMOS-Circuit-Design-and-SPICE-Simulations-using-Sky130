@@ -1,4 +1,4 @@
-<img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/d01f11ea-064b-47b7-9d50-fb64ae0758d2" /># CMOS Circuit Design and SPICE Simulations
+# CMOS Circuit Design and SPICE Simulations
 
 ## Table of Contents
 
