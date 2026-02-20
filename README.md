@@ -896,11 +896,15 @@ Vin in 0 2.5
 
 <img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/0b676fc1-1033-4bcf-94ea-fb8f6fe41978" /> <br/>
 
-- For Wn/Ln = 1.5 and Wp/Lp=2.5, Wn = 0.375u, Wp = 0.9375u, Ln,p=0.25  <br/>
+- For Wn/Ln = 2.8 and Wp/Lp=3.8, Wn = 0.375u, Wp = 0.95u, Ln,p=0.25  <br/>
 
-<img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/e3842e06-84df-4abe-b4aa-dde9c092ab30" /> <br/>
+<img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/e119df84-ceeb-442f-9ab9-c28b6481fda4" /> <br/>
 
-<img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/7601b307-9a20-4b06-9d03-2fe48782772b" /> <br/>
+<img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/5eae3290-c738-4489-b0ef-91dfb26de18f" />
+
+
+
+| Wn/Ln = Wp/Lp = 2.8 | 
 
 - The previous VTC curve is slightly left-shifted because the NMOS strength is higher than the PMOS strength in that configuration.
 - Since the NMOS has higher drive capability, the switching threshold shifts toward a lower input voltage, resulting in the leftward displacement of the transfer curve.
