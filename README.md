@@ -827,3 +827,63 @@ Vin in 0 1.8
 # Day 3 - CMOS Switching threshold and dynamic simulations
 ## Voltage transfer characteristics – SPICE simulations
 ### Lecture 1: SPICE deck creation for CMOS inverter
+- Creating the SPICE deck involves defining the circuit connectivity (netlist), specifying input stimulus conditions, declaring technology/model parameters, and identifying the required output nodes for probing and measurement.
+
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/b631ffee-fe1c-43c5-a4ed-2251ae220ae9" /> <br/>
+
+- M1 represents the PMOS transistor and M2 represents the NMOS transistor.  
+- Proper substrate (bulk) connectivity must be defined for both devices to accurately model body bias effects and threshold voltage behavior.  
+
+| Component | Value |
+|------------|--------|
+| NMOS Width | 0.375u |
+| PMOS Width | 0.375u |
+| NMOS Length | 0.25u |
+| PMOS Length | 0.25u |
+| Cload | 10fF |
+| Vin | 2.5 V|
+| Vdd | 2.5 V |
+
+
+- In this setup, both transistors are configured with identical W/L ratios for baseline comparison. However, in practical CMOS design, the PMOS width is typically sized 2x–3x larger than the NMOS to compensate for lower hole mobility and to balance rise and fall delays
+- For a 250 nm channel length MOSFET, a nominal supply voltage in the range of approximately 2.5 V is commonly used in conventional long-channel technologies.
+- Therefore, the input voltage Vin is typically swept between 0 V and 2.5 V, with 2.5 V representing the logic HIGH level corresponding to Vdd <br/>
+
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/91438719-fb21-40a1-90f3-9bee502f62a8" /> <br/>
+
+- **Identifying the nodes** <br/>
+
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/9571ca53-453a-42d6-a4a6-b9b133585543" /> <br/>
+
+- **Naming the nodes** <br/>
+
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/e970db29-5389-408b-8c07-b3d163fe1ce9" /> <br/>
+
+- **Spice deck** <br/>
+
+```
+M1 out in VDD VSS pmos w=0.375 L=0.25
+M2 out in 0 0 nmos w=0.375 L=0.25
+```
+
+### Lecture 2: SPICE simulation for CMOS inverter
+
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/2711dc95-bf13-451d-ba8d-93de2779d56f" />
+
+- **Spice deck** <br/>
+
+```
+M1 out in VDD VSS pmos w=0.375 L=0.25
+M2 out in 0 0 nmos w=0.375 L=0.25
+
+cload out 0 10f
+
+Vdd vdd 0 2.5
+Vin vdd 0 2.5
+
+.op
+.dc Vin 0 2.5 2.5
+
+.LIB "tsmc_025um_model.mod" CMOS_MODELS
+.end
+```
