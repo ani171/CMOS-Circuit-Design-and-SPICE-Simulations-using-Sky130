@@ -900,13 +900,32 @@ Vin in 0 2.5
 
 <img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/e119df84-ceeb-442f-9ab9-c28b6481fda4" /> <br/>
 
-<img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/5eae3290-c738-4489-b0ef-91dfb26de18f" />
+<img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/5eae3290-c738-4489-b0ef-91dfb26de18f" /> <br/>
 
-
-
-| Wn/Ln = Wp/Lp = 2.8 | 
 
 - The previous VTC curve is slightly left-shifted because the NMOS strength is higher than the PMOS strength in that configuration.
 - Since the NMOS has higher drive capability, the switching threshold shifts toward a lower input voltage, resulting in the leftward displacement of the transfer curve.
 
 ### Lecture 3: Labs Sky130 SPICE simulation for CMOS
+
+- Open ```day3_inv_vtc_Wp084_Wn036.spice```, Wn = 0.36u and Wp = 0.84u, Wp/Wn = 2.33
+
+<img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/23401738-7317-4c65-a501-455767792a95" /> <br/>
+
+- Run ```ngspice``` to obtain the Vtc curve
+
+<img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/a4e88cd9-64e9-43a7-846f-1b638a2e0f03" /> <br/>
+ 
+- ```plot out vs in ``` in ngspice
+
+<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/777eec1c-1bee-4a4a-8721-faca78a46ed6" /> <br/>
+
+<img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/2f46aa8a-7d8b-4bdd-b1a2-73bca381c4bb" />
+
+- Now we need to determine the switching threshold voltage (Vm) from the VTC curve. The switching threshold is the point where: Vin = Vout
+- This is the exact point where the inverter transitions and both NMOS and PMOS conduct equally (Ids_n = Ids_p).
+- To zoom into this point in the waveform viewer: Right mouse button + hold → drag over the region of interest → release to zoom in.
+- Then locate the intersection point where the Vin and Vout curves are equal.
+
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/493682ef-3b85-4a92-aca3-664018faa041" /> <br/>
+
