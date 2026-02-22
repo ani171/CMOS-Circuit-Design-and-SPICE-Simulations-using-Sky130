@@ -1166,4 +1166,10 @@ Vin in 0 2.5
 
 <img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/a74d71cb-605c-4093-b16f-e90cd484d993" /> <br/> 
 
+### Lecture 3: Noise margin equation and summary
+- NML (Noise Margin Low): Any voltage in this range is interpreted as logic low
+- NMH (Noise Margin High): Any voltage in this range is interpreted as logic high
+- Any input voltage falling outside the guaranteed LOW region (≤ VIL) or HIGH region (≥ VIH) lies in the transition region and is considered undefined.
+- Only voltages within the NML or NMH limits are considered tolerable
 
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/a853ce40-62c3-4f7a-85fe-39366f8719ab" /> <br/>
