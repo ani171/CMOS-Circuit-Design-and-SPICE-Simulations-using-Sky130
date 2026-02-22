@@ -40,7 +40,15 @@
 - [Day 3 - CMOS Switching threshold and dynamic simulations](#day-3---cmos-switching-threshold-and-dynamic-simulations)
   * [Voltage transfer characteristics – SPICE simulations](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#voltage-transfer-characteristics--spice-simulations)
     + [Lecture 1: SPICE deck creation for CMOS inverter](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-1-spice-deck-creation-for-cmos-inverter)
+    + [Lecture 2: SPICE simulation for CMOS inverter](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-2-spice-simulation-for-cmos-inverter)
+    + [Lecture 3: Labs Sky130 SPICE simulation for CMOS](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-3-labs-sky130-spice-simulation-for-cmos)
+  * [Static behavior evaluation – CMOS inverter robustness – Switching Threshold](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#static-behavior-evaluation--cmos-inverter-robustness--switching-threshold)
+    + [Lecture 1: Switching Threshold, Vm](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-1-switching-threshold-vm)
+ 
 
+
+
+ 
 # VirtualBox installation
 1. Install VirtualBox
     - Download and install the latest stable release of Oracle VirtualBox from the official website: ```https://www.virtualbox.org/wiki/Downloads```
