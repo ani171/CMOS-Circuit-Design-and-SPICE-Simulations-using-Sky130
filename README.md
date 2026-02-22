@@ -953,12 +953,149 @@ Vin in 0 2.5
 
 - For rise delay and fall delay, consider 50% of the output voltage, i.e., at 0.9V (since Vdd = 1.8V).
 - Measure delay as: Propagation delay = t(out at 0.9V) − t(in at 0.9V)
-- ```Rise Delay (tpLH) = 2.482 ns − 2.15 ns = 0.333 ns```
-- For fall delay, consider the falling transition at 0.9V.
-- ```Fall Delay (tpHL) = 4.334 ns − 4.050 ns = 0.285 ns```
 
-<img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/2b2505c1-f9fa-42aa-aa8a-641098731418" /> <br/>
+<img width="300" height="300" alt="image" src="https://github.com/user-attachments/assets/83d2e586-85e9-4f56-9a34-19f7226f1938" /> <br/>
+
+- ```Rise Delay (tpLH) = 2.4637n − 2.1507n = 0.313 nsec```
+- For fall delay, consider the falling transition at 0.9V
+
+<img width="300" height="300" alt="image" src="https://github.com/user-attachments/assets/c6abcb24-d6b6-47d8-9ce8-71a246b58594" /> <br/>
+
+- ```Fall Delay (tpHL) = 4.33254n − 4.0492 = 0.2833 nsec```
+
+<img width="300" height="300" alt="image" src="https://github.com/user-attachments/assets/2b2505c1-f9fa-42aa-aa8a-641098731418" /> <br/>
 
 ## Static behavior evaluation – CMOS inverter robustness – Switching Threshold
 
 ### Lecture 1: Switching Threshold, Vm
+- Comparison of two CMOS inverters with different PMOS and NMOS W/L ratios shows that the overall VTC shape remains the same in both cases, while only the switching threshold shifts.
+- This indicates that the CMOS inverter maintains its characteristic transfer behavior despite sizing variations. The gain region, rail-to-rail swing, and general curve profile are preserved, demonstrating the robustness of CMOS inverter operation
+
+| Wn/Ln= Wp/Lp = 1.5 | Wn/Ln = 1.5, Wp/Lp = 3.75|
+|------|-----|
+|Wn = Wp = 0.375 | Wn = 0.375, Wp = 0.9375 |
+| Ln = Lp = 0.25u |  Ln = Lp = 0.25u |
+| <img width="450" height="450" alt="image" src="https://github.com/user-attachments/assets/ad0f5415-9806-4ef7-a6ed-9fe1826e1640" /> | <img width="450" height="450" alt="image" src="https://github.com/user-attachments/assets/efc6638b-55cd-42d6-83ca-482a940d365d" /> |
+
+- ** Switching Threshold (Vm) ** – The operating point at which Vin equals Vout. This defines the inverter trip point and is a critical parameter for noise margin and timing analysis.
+- Vm is obtained by plotting a 45-degree reference line (Vin = Vout) on the VTC curve and identifying the intersection with the inverter transfer characteristic.
+- At this operating point, both the NMOS and PMOS devices are simultaneously in saturation region, each conducting significant current.
+- A direct current path exists between VDD and GND, resulting in short-circuit current flow. This condition contributes to dynamic power dissipation during switching.
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/6b837ca2-490b-49ef-9f96-1f66a42f468d" /> <br/>
+
+- In first graph when Wn/Ln = Wp/Lp , ```Vm ~ 0.9V``` and in second graph with a widder PMOS ```Vm ~ 1.2V```
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/e7b72e32-36ae-4452-98cb-279b88084b95" />
+
+### Lecture 2: Analytical expression of Vm as a function of (W/L)n and (W/L)p
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/a84b613e-e9ff-4f6a-8519-55fe3a013b3a" /> <br/>
+
+- Vm is directly dependent on the ratio (Wp/Lp)/(Wn/Ln)
+- Increasing PMOS width shifts Vm toward VDD.
+- Increasing NMOS width shifts Vm toward GND.
+- For symmetric switching (Vm ≈ VDD/2)
+
+### Lecture 3: Analytical expression of (W/L)n and (W/L)p as a function of Vm
+- In the derived current equality expression at Vm, all parameters on the RHS are technology-dependent constants obtained from the model file (k’n, k’p, Vtn, |Vtp|, VDD), except Vm.
+- Once Vm is known (from the VTC curve), the required (W/L)p / (W/L)n ratio can be calculated directly from the equation.
+- This establishes a direct analytical relationship between the switching threshold and the device strength ratio 
+- If Vm shifts toward VDD/2, it indicates balanced device strengths 
+- If Vm shifts toward ground, NMOS is stronger
+- If Vm shifts toward VDD, PMOS is stronger 
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/3010aa11-affa-4658-b540-8eb2fe213641" />
+
+### Lecture 4: Static and dynamic simulation of CMOS inverter
+- Behaviour of CMOS for for various ratios of PMOS and NMOS
+
+| Wp/Lp | x · Wn/Ln |
+|-------|-----------|
+| Wp/Lp | Wn/Ln     |
+| Wp/Lp | 2Wn/Ln    |
+| Wp/Lp | 3Wn/Ln    |
+| Wp/Lp | 4Wn/Ln    |
+| Wp/Lp | 5Wn/Ln    |
+
+- **Case 1**: Wp/Lp = Wn/Ln = 0.7u/1.5u
+- *DC Analysis* <br/>
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/f3a47bf0-c50f-42bd-aba7-c5d486ec2ecf" /> <br/>
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/1fab3263-51e2-41d8-a4bd-145f2f8480f0" /> <br/>
+
+<img width="300" height="200" alt="image" src="https://github.com/user-attachments/assets/e2fc6bfc-923a-4662-a571-13468b8fafbe" /> <br/>
+
+- Switching threshold ~ 0.83V
+- *Transient analysis* <br/>
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/f8ff5393-2bc2-4ae0-af7c-b9dcbebdd3a7" /> <br/>
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/a52b7566-c799-4478-a212-fa7fe98fc84c" /> <br/>
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/06567a0b-c37d-425c-871e-3a44deca2468" /> <br/>
+
+- Rise delay = 2.533n - 2.152n = 0.381nsec
+- Fall delay = 4.2104n - 4.0507n = 0.1597nsec
+
+### Lecture 5: Static and Dynamic simulation of CMOS inverter with increased PMOS width
+- **Case 2**: Wp/Lp = 2(Wn/Ln)
+
+| Parameter | Value |
+|---|----|
+| Wn/Ln | 0.7u/0.15u |
+| Wp/Lp | 1.4u/0.15u |
+
+- *DC Analysis* <br/>
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/0af6670c-b219-4305-8bb5-b14c5fc63a64" /> <br/>
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/de5740d5-077b-490a-9e0c-0f309d92495f" /> <br/>
+
+- Switching threshold ~ 0.87V
+- *Transient analysis* <br/>
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/0935b12e-b536-4b5f-9b6a-72de1b58736e" /> <br/>
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/50e134c9-f92c-41d2-be67-9ff83a3fc11f" /> <br/>
+
+- Rise delay = 2.35n - 2.15n = 0.2nsec
+- Fall delay = 4.2127n - 4.0525n = 0.1602nsec
+
+- **Case 3**: Wp/Lp = 3(Wn/Ln)
+
+| Parameter | Value |
+|---|----|
+| Wn/Ln | 0.7u/0.15u |
+| Wp/Lp | 1.4u/0.15u |
+
+- *DC Analysis* <br/>
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/467f0f31-60e8-46ab-8223-42c4e6c5e0f1" /> <br/>
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/242f915e-4145-47c8-9869-8f01461237d9" /> <br/>
+
+- Switching threshold ~ 0.89V
+- *Transient analysis* <br/>
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/358f100f-3826-43f3-abb4-55c0e9812531" /> <br/>
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/77d7304b-72e3-4ed1-92b1-1d45101f00e7" /> <br/>
+
+- Rise delay = 2.3n - 2.14n = 0.16nsec
+- Fall delay = 4.22n - 4.051n = 0.169nsec
+
+| Wp/Lp | x · Wn/Ln | Vm | Rise delay | Fall delay |
+|-------|-----------|-----------|-----------|-----------|
+| Wp/Lp | Wn/Ln     | 0.83V | 0.381nsec | 0.1597nsec
+| Wp/Lp | 2Wn/Ln    | 0.87V | 0.2nsec | 0.1602nsec | 
+| Wp/Lp | 3Wn/Ln    | 0.89V | 0.16nsec | 0.169nsec |
+
+- The switching threshold Vm shifts upward as PMOS width increases. This occurs because the pull-up network becomes stronger relative to the NMOS
+- A stronger PMOS requires a higher input voltage to balance the NMOS pull-down current, thereby moving Vm closer to VDD
+- Rise delay decreases with increase in PMOS width (Wp). A larger PMOS provides higher drive current during the charging phase, reducing the time required to charge the output load capacitor (Cload)
+
+### Lecture 6: Applications of CMOS inverter in clock network and STA
+
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/fcfa904b-6b7d-472b-aa13-5d3904ed1b4e" />
