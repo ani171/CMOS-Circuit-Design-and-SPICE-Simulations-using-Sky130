@@ -1107,13 +1107,13 @@ Vin in 0 2.5
 
 - During fabrication, process variations can introduce slight deviations in the physical dimensions of PMOS and NMOS devices from their intended W/L ratios. However, the CMOS inverter demonstrates strong robustness, as moderate sizing variations do not cause significant shifts in the switching threshold (Vm)
 - The transfer characteristic remains stable, and Vm typically does not deviate drastically unless there is a substantial imbalance in device strengths
-- When Wp = 2Wn, the rise and fall delays become approximately equal. This compensates for the lower hole mobility in PMOS compared to electron mobility in NMOS
+- When Wp = 2Wn, the rise and fall delays become approximately equal. This compensates for the lower hole mobility in PMOS compared to the electron mobility in NMOS
 - Achieving equal rise and fall delays improves timing predictability, reduces duty-cycle distortion, and ensures balanced switching behavior
 - This balanced operation reflects the inherent symmetry of the CMOS inverter, making it a highly reliable and scalable digital building block
 
 <img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/5b3fd4cd-77c3-40b8-b0f0-6325ebe38cfa" /> <br/>
 
-- It is the typical charcterstics of clock inverters and buffers, where propagation delay symmetry (tphl = tplh) is a key design
+- It is the typical characteristics of clock inverters and buffers, where propagation delay symmetry (tphl = tplh) is a key design
 
 <img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/bb4ebd23-6953-4184-aa15-f931f323fec3" /> <br/>
 
@@ -1129,5 +1129,41 @@ Vin in 0 2.5
 ## Static behaviour evaluation-CMOS inverter robustness-Noise Margin
 ### Lecture 1: Introduction to Noise Margin
 
+- Glitches and crosstalk noise become increasingly critical in advanced technology nodes due to reduced supply voltages, tighter spacing, and higher interconnect coupling. These effects can be anticipated and quantified through noise margin analysis.
+- **Noise Margin**: The maximum unwanted noise voltage that can be superimposed on a valid logic level without causing a logic error at the output.
+- In an ideal inverter, input levels of 0 and 1 produce perfect 1 and 0 outputs, with an infinite transition slope at the switching point.
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/214e40ad-efe4-407c-b804-4cd65390b5f3" /> <br/>
+
+- In practical CMOS circuits, parasitic resistances and capacitances introduce finite transition time, resulting in a finite slope in the VTC around the switching region.
+- Due to this finite gain in the transition region, the inverter becomes more sensitive to input noise near the switching threshold (Vm), where small voltage variations can cause significant output changes.
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/3d46cb71-71ca-49eb-8cac-3c2f6e57713a" /> <br/>
+
+| Voltage margin | Definations |
+|-----|-----|
+| VIL | - Input low voltage <br/> - Any input voltage between 0 and VIL will be treated as 0 |
+| VOH | - Output high voltage <br/> - Any output voltage between VOH and VDD is treated as logic 1 |
+| VIH | - Input high voltage <br/>  - Any input voltage between VIH and VDD will be treated as 1 |
+| VOL | - Output low voltage <br/> - Any output voltage between 0 and VOL is treated as logic 0 |
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/9b878d0f-5c9c-4e61-90ea-dc75c6443639" />
+
+### Lecture 2: Noise Margin voltage parameters
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/cd13339b-c60f-4ec6-b802-22ac5b1326da" /> <br/>
+
+- Considering practical non-idealities of a CMOS inverter, the VTC is not perfectly vertical in the transition region, and valid logic levels occupy finite voltage ranges.
+- When 0 < Vin < VIL → the inverter output is VOH ≤ Vout ≤ VDD (valid logic HIGH output)
+- When VIH < Vin < VDD → the inverter output is 0 ≤ Vout ≤ VOL (valid logic LOW output)
+- The regions between VIL and VIH correspond to the transition region, where both devices conduct, and the output is not considered a valid logic level.
+- Voltage relationships must satisfy: ```VOL < VIL < VIH < VOH < VDD```
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/582aa87b-d38e-4334-b5b2-134c49b40b80" /> <br/>
+
+- The points where the slope of the VTC equals −1 (dVout/dVin = −1) define VIL and VIH. These boundaries mark the limits of the valid noise margin region.
+- In the transition region, the magnitude of the slope (gain) is greater than 1, providing signal amplification and noise rejection. Outside this region, the slope magnitude is less than 1, ensuring stable logic levels.
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/a74d71cb-605c-4093-b16f-e90cd484d993" /> <br/> 
 
 
