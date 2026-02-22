@@ -44,10 +44,15 @@
     + [Lecture 3: Labs Sky130 SPICE simulation for CMOS](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-3-labs-sky130-spice-simulation-for-cmos)
   * [Static behavior evaluation – CMOS inverter robustness – Switching Threshold](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#static-behavior-evaluation--cmos-inverter-robustness--switching-threshold)
     + [Lecture 1: Switching Threshold, Vm](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-1-switching-threshold-vm)
+    + [Lecture 2: Analytical expression of Vm as a function of (W/L)n and (W/L)p](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-2-analytical-expression-of-vm-as-a-function-of-wln-and-wlp)
+    + [Lecture 3: Analytical expression of (W/L)n and (W/L)p as a function of Vm](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-3-analytical-expression-of-wln-and-wlp-as-a-function-of-vm)
+    + [Lecture 4: Static and dynamic simulation of CMOS inverter](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-4-static-and-dynamic-simulation-of-cmos-inverter)
+    + [Lecture 5: Static and Dynamic simulation of CMOS inverter with increased PMOS width](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-5-static-and-dynamic-simulation-of-cmos-inverter-with-increased-pmos-width)
+    + [Lecture 6: Applications of CMOS inverter in clock network and STA](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-6-applications-of-cmos-inverter-in-clock-network-and-sta)
+- [Day4- CMOS Noise Margin robustness evaluation](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#day4--cmos-noise-margin-robustness-evaluation)
+  * [Static behaviour evaluation-CMOS inverter robustness-Noise Margin](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#static-behaviour-evaluation-cmos-inverter-robustness-noise-margin)
+    + [Lecture 1: Introduction to Noise Margin](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-1-introduction-to-noise-margin)
  
-
-
-
  
 # VirtualBox installation
 1. Install VirtualBox
