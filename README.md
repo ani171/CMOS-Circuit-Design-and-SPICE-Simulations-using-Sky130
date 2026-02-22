@@ -1098,4 +1098,31 @@ Vin in 0 2.5
 
 ### Lecture 6: Applications of CMOS inverter in clock network and STA
 
-<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/fcfa904b-6b7d-472b-aa13-5d3904ed1b4e" />
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/fcfa904b-6b7d-472b-aa13-5d3904ed1b4e" /> <br/>
+
+- During fabrication, process variations can introduce slight deviations in the physical dimensions of PMOS and NMOS devices from their intended W/L ratios. However, the CMOS inverter demonstrates strong robustness, as moderate sizing variations do not cause significant shifts in the switching threshold (Vm)
+- The transfer characteristic remains stable, and Vm typically does not deviate drastically unless there is a substantial imbalance in device strengths
+- When Wp = 2Wn, the rise and fall delays become approximately equal. This compensates for the lower hole mobility in PMOS compared to electron mobility in NMOS
+- Achieving equal rise and fall delays improves timing predictability, reduces duty-cycle distortion, and ensures balanced switching behavior
+- This balanced operation reflects the inherent symmetry of the CMOS inverter, making it a highly reliable and scalable digital building block
+
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/5b3fd4cd-77c3-40b8-b0f0-6325ebe38cfa" /> <br/>
+
+- It is the typical charcterstics of clock inverters and buffers, where propagation delay symmetry (tphl = tplh) is a key design
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/bb4ebd23-6953-4184-aa15-f931f323fec3" /> <br/>
+
+- If delays are not equal, the output waveform becomes asymmetric, causing duty cycle distortion in clock distribution networks. This leads to unequal high and low pulse widths at sequential elements, potentially impacting setup/hold margins
+- Unequal rise and fall delays introduce transition-dependent delay variation across buffers, increasing clock skew and degrading timing predictability in large clock trees. Over multiple stages, this asymmetry accumulates and can significantly affect overall timing closure <br/>
+
+- If the primary timing constraint is dominated by rise delay (tpLH), sizing can be optimized specifically to meet the required rising-edge slack condition.
+- In such cases, PMOS width can be increased selectively to reduce the low-to-high transition delay, ensuring that the data arrival time satisfies the setup timing requirement at the capture flop.
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/f8618c21-fd48-409d-b604-6799f95d3b14" />
+
+# Day4- CMOS Noise Margin robustness evaluation
+## Static behaviour evaluation-CMOS inverter robustness-Noise Margin
+### Lecture 1: Introduction to Noise Margin
+
+
+
