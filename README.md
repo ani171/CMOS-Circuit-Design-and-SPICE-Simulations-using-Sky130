@@ -1,4 +1,4 @@
-<img width="1875" height="379" alt="image" src="https://github.com/user-attachments/assets/092190fb-622e-4e8b-a1e4-05b3e1fca525" /># CMOS Circuit Design and SPICE Simulations
+# CMOS Circuit Design and SPICE Simulations
 
 ## Table of Contents
 
@@ -1316,5 +1316,12 @@ Vin in 0 2.5
 | 1.5V | 15.96 |
 | 1V | 14.89 |
 | 0.5V | 12.63 |
+
+- The Gain magnitude increases by 53% when the supply is reduced from 2.5 V to 0.5 V
+- **Advantages of using lower supply voltage**
+ 1. Increase in gain (about 50%)
+ 2. Energy is reduced at lower supply voltage
+
+
 
 
