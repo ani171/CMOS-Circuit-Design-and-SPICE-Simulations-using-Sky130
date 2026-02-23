@@ -1255,7 +1255,18 @@ Vin in 0 2.5
 
 - We obtain VOH and VIL values from this part of the graph
 
-<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/5d8b4e5f-f0c8-4e3c-af0e-61a6471dca08" /> <br/>
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/3c04338b-e2b8-4d49-87d8-1cf5971d63dc" /> <br/>
 
-- VOH = 
+<img width="300" height="100" alt="image" src="https://github.com/user-attachments/assets/741634e8-74aa-4496-87dd-8e87b710a4f2" /> <br/>
 
+- VOH = 1.72464V
+- VIL = 0.761818V
+
+- We obtain VOl and VIH values from this part of the graph
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/99a44a5e-e2f1-44be-9133-550e5407eb29" /> <br/>
+
+<img width="300" height="100" alt="image" src="https://github.com/user-attachments/assets/c428f95f-4cc8-4c1f-84bc-3239b332cdcb" /> <br/>
+
+- VOL = 0.05217V
+- VIH = 1.0363V
