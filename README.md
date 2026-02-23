@@ -1,4 +1,4 @@
-# CMOS Circuit Design and SPICE Simulations
+<img width="1875" height="379" alt="image" src="https://github.com/user-attachments/assets/092190fb-622e-4e8b-a1e4-05b3e1fca525" /># CMOS Circuit Design and SPICE Simulations
 
 ## Table of Contents
 
@@ -1270,3 +1270,51 @@ Vin in 0 2.5
 
 - VOL = 0.05217V
 - VIH = 1.0363V
+
+```
+- NMH = VOH − VIH = 1.72464 - 1.0363 = 0.688V
+- NML = VIL - VOL = 0.761818 - 0.05217 = 0.709V
+```
+
+# Day 5 - CMOS power supply and device variation robustness evaluation
+## Static behavior evaluation – CMOS inverter robustness – Power supply variation
+### Lecture 1: Smart SPICE simulation for power supply variations
+- At advanced technology nodes, power supply scaling becomes a critical parameter in robustness evaluation, since VDD is reduced to control dynamic power and electric field stress.
+- As VDD decreases, noise margins shrink, and the transition region becomes more sensitive to variations, making inverter stability more challenging.
+- It is essential that the fundamental CMOS behavior — valid logic levels, switching threshold positioning, and gain characteristics — remains consistent even at lower supply voltages
+
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/81b7d163-6332-4d1b-a42f-6215274ed043" /> <br/>
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/85dba913-126d-40a4-a366-24e5d8dfdf5c" /> <br/>
+
+- This script performs a DC sweep of the CMOS inverter while progressively reducing the supply voltage (VDD).
+- The initial supply voltage is set to 2.5 V, and inside the loop, VDD is reduced in steps of 0.5 V for five iterations.
+- For each supply voltage value, a DC sweep of Vin from 0 to 2.5 V with a step size of 0.01 V is executed to extract the VTC.
+- The ```alter Vdd``` command updates the supply value without redefining the entire circuit.
+- Finally, multiple DC characteristics (dc1 to dc5) are plotted together to compare inverter behavior as a function of supply voltage, illustrating the impact of supply scaling on switching threshold and output swing.
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/0949b903-7a5e-4c2c-94e3-0098d94f535c" /> <br/>
+
+### Lecture 2: Advantages and disadvantages of using low supply voltage
+- The CMOS inverter is capable of operating even at lower supply voltages (e.g., 0.5 V), still producing a valid VTC, though with reduced voltage swing and transition sharpness.
+- The first robustness metric to evaluate under supply scaling is the gain of the inverter
+- As VDD decreases, the peak gain typically reduces, indicating weaker amplification and potentially reduced noise margins
+- When ```Supply voltage = 2.5V```
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/1981e960-e7c3-42ba-9531-f86bc0abae38" /> <br/>
+
+<img width="300" height="200" alt="image" src="https://github.com/user-attachments/assets/a05c5ba7-e894-418b-b085-36969020d615" /> <br/>
+
+- Gain = dVout/dVin = (2.35-0.1667)/(1.242-0.944) = 7.327
+
+- Similarly, calculating the gain factor for all the values of supply voltage
+
+| Supply voltage | Gain factor |
+|-----|----|
+| 2.5V | 7.327 |
+| 2V | 9.27 |
+| 1.5V | 15.96 |
+| 1V | 14.89 |
+| 0.5V | 12.63 |
+
+
