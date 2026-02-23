@@ -1251,4 +1251,11 @@ Vin in 0 2.5
 
 <img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/12056ab4-a8dd-41a0-b310-c7f460cb636c" /> <br/>
 
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/781bc842-6b10-4bde-b5d4-a24fb22f947f" /> <br/>
+
+- We obtain VOH and VIL values from this part of the graph
+
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/5d8b4e5f-f0c8-4e3c-af0e-61a6471dca08" /> <br/>
+
+- VOH = 
 
