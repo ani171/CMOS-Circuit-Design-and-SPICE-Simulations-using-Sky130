@@ -1173,3 +1173,49 @@ Vin in 0 2.5
 - Only voltages within the NML or NMH limits are considered tolerable
 
 <img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/a853ce40-62c3-4f7a-85fe-39366f8719ab" /> <br/>
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/d362e0c0-ee28-4f7d-9bab-980d37e49dab" /> <br/>
+
+- The small voltage bumps represent glitches, which may arise due to crosstalk, coupling capacitance, or switching activity in neighboring nets
+ - Case 1: A small glitch occurs while the signal is logic 0, but the disturbed voltage remains within the NML range. The logic level is still correctly interpreted as LOW, and no functional error occurs
+ - Case 2: The glitch pushes the voltage into the undefined region (between VIL and VIH). The inverter may respond unpredictably, potentially producing an erroneous output
+ - Case 3: A large glitch shifts the voltage into the NMH region. Although the voltage now represents a valid HIGH level, it results in unintended logic switching and incorrect circuit behavior
+
+### Lecture 4: Noise margin variation with respect to PMOS width
+- Noise margin is evaluated by varying the PMOS width as an integral multiple of the NMOS width, and observing the impact on VTC characteristics. This analysis demonstrates the robustness of the CMOS inverter against noise under different strength ratios
+- The critical points are obtained by identifying where the slope of the VTC equals −1 (dVout/dVin = −1). These points correspond to VIL and VIH
+- From these slope = −1 points, projections are extended to the x-axis and y-axis to determine VIL, VIH, VOL, and VOH, enabling calculation of: ```NMH = VOH - VIH``` and ```NML = VIL - VOL```
+- **Case 1:** Wp/Lp = Wn/Ln
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/6256973a-89d8-4643-9640-f0285712620f" /> <br/>
+
+- A larger noise margin indicates a stronger and more noise-immune CMOS inverter, ensuring reliable logic interpretation even in the presence of glitches and coupling noise
+- **Case 2:** Wp/Lp = 2(Wn/Ln)
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/ffa94347-71dc-42e9-a410-a578b72c5548" /> <br/>
+
+- The PMOS transistor is responsible for charging and maintaining the output node at logic HIGH. Increasing the PMOS width reduces its effective ON resistance (R_ON), creating a stronger pull-up path from VDD to the load capacitance.
+- A lower resistance path improves the ability of the output node to restore and sustain a solid HIGH level against leakage and noise disturbances.
+- As a result, VOH remains closer to VDD, leading to an increase in NMH (Noise Margin High) and improved immunity to HIGH-level noise.
+- **Case 3:** Wp/Lp = 3(Wn/Ln)
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/19c3ca25-35ac-4a45-80a6-ecb17433329e" /> <br/>
+
+- The PMOS  is responsible for maintaining logic HIGH (1) at the output, while the NMOS device maintains logic 0. When only the PMOS width is increased, the pull-up network becomes stronger, improving the output HIGH level (VOH) and increasing NMH.
+- Since the NMOS sizing remains unchanged, the pull-down strength and VOL remain nearly the same, therefore, NML does not significantly change. Hence, selectively increasing PMOS width primarily enhances high-level noise immunity (NMH) without materially affecting low-level noise margin (NML).
+- **Case 4:** Wp/Lp = 4(Wn/Ln)
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/a833dbfd-1c0b-4e59-9093-fcd58dbee15c" /> <br/>
+
+- There are practical limitations to increasing the PMOS width; device sizing cannot be scaled arbitrarily due to area, capacitance, and power constraints.
+- NMH does not increase indefinitely with continuous PMOS width scaling. Beyond a certain point, improvements saturate because VOH is already close to VDD, and further strength increase provides diminishing returns
+- **Case 5:** Wp/Lp = 5(Wn/Ln)
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/c55af2b2-235c-4f0a-9a61-7457f897aa24" /> <br/>
+
+- For Wp/Lp=4(Wn/Ln) and Wp/Lp=5(Wn/Ln), the extracted noise margins are nearly identical
+- This indicates that beyond a certain PMOS sizing ratio, the noise margin saturates and becomes relatively insensitive to further width increase
+- Therefore, increasing PMOS width beyond this point does not provide meaningful improvement in noise immunity and only adds area and parasitic capacitance overhead
+
+<img width="1245" height="429" alt="image" src="https://github.com/user-attachments/assets/cd596b4f-8358-4d6d-b7c4-e46a95e56378" />
+
