@@ -1217,5 +1217,26 @@ Vin in 0 2.5
 - This indicates that beyond a certain PMOS sizing ratio, the noise margin saturates and becomes relatively insensitive to further width increase
 - Therefore, increasing PMOS width beyond this point does not provide meaningful improvement in noise immunity and only adds area and parasitic capacitance overhead
 
-<img width="1245" height="429" alt="image" src="https://github.com/user-attachments/assets/cd596b4f-8358-4d6d-b7c4-e46a95e56378" />
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/cd596b4f-8358-4d6d-b7c4-e46a95e56378" /> <br/>
+
+- Due to fabrication imperfections, actual transistor widths may slightly deviate from their intended design values. However, NMH, NML, and the switching threshold (Vm) do not exhibit drastic variation for moderate sizing deviations.
+- This indicates that inverter functionality, noise immunity, and switching behavior remain stable despite process-induced dimensional variations.
+- Therefore, CMOS inverters demonstrate strong robustness to practical fabrication tolerances
+
+- **Digital Design** <br/>
+
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/640c9f3c-7381-44cd-b91a-da340985d2f0" /> <br/>
+- Operates in the saturation regions (logic 0 or logic 1): The circuit is designed so the input stays in regions where the output is clearly HIGH (~VDD) or LOW (~0V).
+- Avoids the unstable middle region
+- Uses noise margins for reliability
+
+- **Analog Design** <br/>
+
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/70659abe-a663-4e57-88ff-f4cdcd18b3ec" /> <br/>
+
+- Operates in the transition region (linear region): The design intentionally biases the inverter in the steep middle portion of the curve, where the slope is high.
+- Small input voltage changes produce amplified output changes (voltage gain)
+- Output is continuous, not just 0 or VDD
+- The output can take any voltage along the curve
+
 
