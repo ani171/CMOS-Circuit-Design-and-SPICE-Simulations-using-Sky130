@@ -1239,5 +1239,16 @@ Vin in 0 2.5
 <img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/70659abe-a663-4e57-88ff-f4cdcd18b3ec" /> <br/>
 
 ### Lecture 5: Sky130 Noise margin labs
+- Open the ```day4_inv_noisemargin__wp1__wn036.spice```
+
+<img width="400" height="200" alt="image" src="https://github.com/user-attachments/assets/801a5eaf-88ee-4c77-8da3-9129693ffabe" /> <br/>
+
+- ```(Wp/Lp)/(wn/Ln) = 2.78``` <br/>
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/6b9c16c7-8cb5-43f2-ae3c-efd9fb1de1c5" /> <br/>
+
+- Run ngspice and ``` plot out vs in```
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/12056ab4-a8dd-41a0-b310-c7f460cb636c" /> <br/>
 
 
