@@ -1318,9 +1318,52 @@ Vin in 0 2.5
 | 0.5V | 12.63 |
 
 - The Gain magnitude increases by 53% when the supply is reduced from 2.5 V to 0.5 V
+- Energy, ```E= (1/2) CV^2```
+ - For 0.5V, E = 0.125C J
+ - For 2.5V, E = 3.125C J
 - **Advantages of using lower supply voltage**
  1. Increase in gain (about 50%)
- 2. Energy is reduced at lower supply voltage
+ 2. Significant reduction in energy (about 90%)
+
+<br/>
+
+- **Disadvantages of using lower supply voltage**
+ - When the supply voltage is reduced, the drive current of both NMOS and PMOS decreases.
+ - Due to lower current, the charging and discharging of the load capacitor become slower. As a result, both rise delay (tₚLH) and fall delay (tₚHL) increase.
+ - Increased propagation delay leads to reduced switching speed. This ultimately causes a performance degradation in the CMOS inverter.
+
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/0831ef93-130e-4424-84cf-4fac2acd9856" />
+
+
+### Lecture 3: Sky130 Supply Variation Labs
+- Open ```day5_inv_supplyvariation.spice``` file
+
+<img width="600" height="400" alt="image" src="https://github.com/user-attachments/assets/dd58c259-66b8-4dce-8b66-ac36cfca4a34" /> <br/>
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/d8880204-ccd8-4ce4-b651-6ae7db0dee07" /> <br/>
+
+- The initial supply voltage is set to 1.8 V
+- Inside the loop, the supply voltage is reduced in steps of 0.2 V after each DC sweep
+- The loop runs while voltagesupplyvariation < 6, resulting in 6 iterations
+- Therefore, the inverter characteristics are evaluated at the following supply voltages: 1.8 V, 1.6 V, 1.4 V, 1.2 V, 1.0 V, and 0.8 V
+- Each iteration performs a DC sweep of Vin, allowing comparison of the VTC curves as a function of decreasing supply voltage
+- Run ```ngspice```
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/559a2c6e-0dfa-489c-a739-8c8a6b206a79" /> <br/>
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/c3b92765-8469-4ab5-a325-67d6fe0916d2" /> <br/>
+
+- Evaluating gain
+
+| Supply voltage | | Gain |
+| ------| -----| -----|
+| 1.8V | <img width="300" height="200" alt="image" src="https://github.com/user-attachments/assets/40dbffef-ce11-4675-8fc3-01b3c468da81" /> | 5.95 |
+| 1.6V | <img width="300" height="200" alt="image" src="https://github.com/user-attachments/assets/e53e3087-d053-4c2a-899f-b9e32ad7ab65" /> | 7.74 |
+| 1.4V | <img width="300" height="200" alt="image" src="https://github.com/user-attachments/assets/515e3d1e-da31-43c2-9d50-fde6d53b5b4b" /> | 8.38 |
+| 1.2V | <img width="300" height="200" alt="image" src="https://github.com/user-attachments/assets/ec36864f-28e6-4da8-a620-0797745bb2de" /> | 9.06 |
+| 1V | <img width="300" height="200" alt="image" src="https://github.com/user-attachments/assets/36272d4b-42b5-42f8-9118-dd8aa3497528" /> | 9.15 |
+| 0.8V | <img width="300" height="200" alt="image" src="https://github.com/user-attachments/assets/0d5988fe-c982-40fd-acbb-a6f78d899ce2" /> | 9.43 |
+
 
 
 
