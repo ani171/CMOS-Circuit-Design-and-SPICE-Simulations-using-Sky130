@@ -1202,7 +1202,7 @@ Vin in 0 2.5
 <img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/19c3ca25-35ac-4a45-80a6-ecb17433329e" /> <br/>
 
 - The PMOS  is responsible for maintaining logic HIGH (1) at the output, while the NMOS device maintains logic 0. When only the PMOS width is increased, the pull-up network becomes stronger, improving the output HIGH level (VOH) and increasing NMH.
-- Since the NMOS sizing remains unchanged, the pull-down strength and VOL remain nearly the same, therefore, NML does not significantly change. Hence, selectively increasing PMOS width primarily enhances high-level noise immunity (NMH) without materially affecting low-level noise margin (NML).
+- Since the NMOS sizing remains unchanged, the pull-down strength and VOL remain nearly the same, therefore, NML does not significantly change. Hence, selectively increasing the PMOS width primarily enhances high-level noise immunity (NMH) without significantly affecting the low-level noise margin (NML).
 - **Case 4:** Wp/Lp = 4(Wn/Ln)
 
 <img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/a833dbfd-1c0b-4e59-9093-fcd58dbee15c" /> <br/>
@@ -1223,20 +1223,21 @@ Vin in 0 2.5
 - This indicates that inverter functionality, noise immunity, and switching behavior remain stable despite process-induced dimensional variations.
 - Therefore, CMOS inverters demonstrate strong robustness to practical fabrication tolerances
 
-- **Digital Design** <br/>
-
-<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/640c9f3c-7381-44cd-b91a-da340985d2f0" /> <br/>
+- **Digital Design:**
 - Operates in the saturation regions (logic 0 or logic 1): The circuit is designed so the input stays in regions where the output is clearly HIGH (~VDD) or LOW (~0V).
 - Avoids the unstable middle region
 - Uses noise margins for reliability
 
-- **Analog Design** <br/>
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/640c9f3c-7381-44cd-b91a-da340985d2f0" /> <br/>
 
-<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/70659abe-a663-4e57-88ff-f4cdcd18b3ec" /> <br/>
-
+- **Analog Design:**
 - Operates in the transition region (linear region): The design intentionally biases the inverter in the steep middle portion of the curve, where the slope is high.
 - Small input voltage changes produce amplified output changes (voltage gain)
 - Output is continuous, not just 0 or VDD
 - The output can take any voltage along the curve
+
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/70659abe-a663-4e57-88ff-f4cdcd18b3ec" /> <br/>
+
+### Lecture 5: Sky130 Noise margin labs
 
 
