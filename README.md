@@ -1372,7 +1372,24 @@ Vin in 0 2.5
 | 1V | <img width="300" height="200" alt="image" src="https://github.com/user-attachments/assets/36272d4b-42b5-42f8-9118-dd8aa3497528" /> | 9.15 |
 | 0.8V | <img width="300" height="200" alt="image" src="https://github.com/user-attachments/assets/0d5988fe-c982-40fd-acbb-a6f78d899ce2" /> | 9.43 |
 
+## Static behaviour evaluation-CMOS inverter robustness- Device variation
+###  Sources of variation – Etching process
+- In a single CMOS inverter layout, the channel length (L) is defined by the gate length (polysilicon dimension), while the channel width (W) corresponds to the common overlapping region between polysilicon and diffusion.
+- During fabrication, especially in lithography and etching steps, there can be dimensional variations due to process tolerances.
+- These variations may cause slight deviations in the effective W and L of PMOS and NMOS devices.
+- Such dimensional shifts impact threshold voltage, drive strength, delay, and switching characteristics, which is why CMOS robustness to process variations is an important design consideration
 
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/435a05ca-0a7a-426e-9295-85080c81de3d" /> <br/>
 
+- The gate length (L) — defined by the polysilicon dimension — primarily determines the technology node (180 nm, 65 nm, 28 nm, ...)
+- As the technology node scales down, the minimum achievable gate length reduces, enabling higher device density and faster switching
+
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/42dd5056-ce23-4ab2-840b-a305b386f0fb" /> <br/>
+
+- **Inverter Chain**
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/0ab90b48-d688-4da0-988f-351afe813d33" /> <br/>
+
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/57f7e698-2f87-46a2-a59e-8f8ef11579a1" /> <br/>
 
 
