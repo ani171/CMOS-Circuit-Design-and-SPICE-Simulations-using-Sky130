@@ -57,10 +57,10 @@
     + [Lecture 4: Noise margin variation with respect to PMOS width](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-4-noise-margin-variation-with-respect-to-pmos-width)
     + [Lecture 5: Sky130 Noise margin labs](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-5-sky130-noise-margin-labs)
  - [Day 5 - CMOS power supply and device variation robustness evaluation](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#day-5---cmos-power-supply-and-device-variation-robustness-evaluation)
-  * [Static behavior evaluation – CMOS inverter robustness – Power supply variation](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#static-behavior-evaluation--cmos-inverter-robustness--power-supply-variation)
-    + [Lecture 1: Smart SPICE simulation for power supply variations](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-1-smart-spice-simulation-for-power-supply-variations)
-    + [Lecture 2: Advantages and disadvantages of using low supply voltage](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-2-advantages-and-disadvantages-of-using-low-supply-voltage)
-    + [Lecture 3: Sky130 Supply Variation Labs](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-3-sky130-supply-variation-labs)
+   * [Static behavior evaluation – CMOS inverter robustness – Power supply variation](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#static-behavior-evaluation--cmos-inverter-robustness--power-supply-variation)
+     + [Lecture 1: Smart SPICE simulation for power supply variations](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-1-smart-spice-simulation-for-power-supply-variations)
+     + [Lecture 2: Advantages and disadvantages of using low supply voltage](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-2-advantages-and-disadvantages-of-using-low-supply-voltage)
+     + [Lecture 3: Sky130 Supply Variation Labs](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-3-sky130-supply-variation-labs)
  
 # VirtualBox installation
 1. Install VirtualBox
