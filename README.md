@@ -1392,4 +1392,7 @@ Vin in 0 2.5
 
 <img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/57f7e698-2f87-46a2-a59e-8f8ef11579a1" /> <br/>
 
+- In an inverter chain, even though all inverters are designed identically, process variations (L, W, Vt) can be slightly different for each inverter.
+- Local random effects such as line-edge roughness and dopant fluctuations cause mismatch from one inverter to another.
+- Due to these variations, delay and switching threshold may slightly differ across the chain. As a result, variation can accumulate along the chain, impacting overall timing performance.
 
