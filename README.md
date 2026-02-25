@@ -61,7 +61,12 @@
      + [Lecture 1: Smart SPICE simulation for power supply variations](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-1-smart-spice-simulation-for-power-supply-variations)
      + [Lecture 2: Advantages and disadvantages of using low supply voltage](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-2-advantages-and-disadvantages-of-using-low-supply-voltage)
      + [Lecture 3: Sky130 Supply Variation Labs](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-3-sky130-supply-variation-labs)
- 
+   * [Static behaviour evaluation-CMOS inverter robustness- Device variation](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#static-behaviour-evaluation-cmos-inverter-robustness--device-variation)
+     + [Lecture 1: Sources of variation – Etching process](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-1-sources-of-variation--etching-process)
+     + [Lecture 2: Sources of variation – oxide thickness](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-2-sources-of-variation--oxide-thickness)
+     + [Lecture 3: Smart SPICE simulation for device variations](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-3-smart-spice-simulation-for-device-variations)
+     + [Lecture 4: Conclusion](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-4-conclusion)
+     + [Lecture 5: Sky130 Device Variation Labs](https://github.com/ani171/CMOS_Circuit_Design/blob/main/README.md#lecture-5-sky130-device-variation-labs)
 # VirtualBox installation
 1. Install VirtualBox
     - Download and install the latest stable release of Oracle VirtualBox from the official website: ```https://www.virtualbox.org/wiki/Downloads```
@@ -1406,21 +1411,39 @@ Vin in 0 2.5
 
 - The last figure shows the cross-sectional view of the CMOS inverter, highlighting the gate oxide under the polysilicon (or metal) gate
 
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/9714167a-b771-482d-95c9-8263fbbecc9b" /> <br/>
+
+- But in reality, the oxide thickness is not even
+
+<img width="400" height="250" alt="image" src="https://github.com/user-attachments/assets/5ba93271-9a3c-4e85-b02e-d5863bbc556c" /> <br/>
+
+- In an inverter chain, process variations can accumulate stage by stage, slightly shifting the delay and switching threshold along the path.
+- The middle inverters are surrounded by similar neighboring structures, so their variations are more uniform and somewhat self-compensated.
+- The edge (side) inverters are exposed to different layout environments and nearby structures, resulting in larger process variations.
+- Even with these accumulated and layout-dependent variations, CMOS inverters maintain correct logic levels, demonstrating their robustness.
+
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/8c9b4800-7942-455a-b837-575482063b90" /> <br/>
+
+<img width="400" height="350" alt="image" src="https://github.com/user-attachments/assets/f8af0905-b6b0-4bc0-840b-3bb4fa5009fe" /> <br/>
+
+- Changes in tox directly affects the drain current 
+
+
 ### Lecture 3: Smart SPICE simulation for device variations
 - **Case 1**: Strong PMOS – Weak NMOS
- - PMOS width (Wp) ≫ NMOS width (Wn)
- - Since transistor resistance R is inversely proportional to width, a wider PMOS has lower ON resistance
- - Pull-up network becomes stronger than pull-down network
- - Switching threshold (VM) shifts toward higher input voltage
- - Noise Margin High (NMH) improves, while NML slightly reduces
- - However, the inverter still reaches full VDD and full 0 V, maintaining a valid logic level
+  - PMOS width (Wp) ≫ NMOS width (Wn)
+  - Since transistor resistance R is inversely proportional to width, a wider PMOS has lower ON resistance
+  - Pull-up network becomes stronger than pull-down network
+  - Switching threshold (VM) shifts toward higher input voltage
+  - Noise Margin High (NMH) improves, while NML slightly reduces
+  - However, the inverter still reaches full VDD and full 0 V, maintaining a valid logic level
 
 - **Case 2**: Weak PMOS – Strong NMOS
- - NMOS width (Wn) ≫ PMOS width (Wp)
- - Wider NMOS → lower ON resistance in pull-down path
- - Switching threshold shifts toward lower input voltage
- - Noise Margin Low (NML) improves, while NMH slightly reduces
- - Still, the output swings rail-to-rail (0 to VDD), preserving digital logic levels
+  - NMOS width (Wn) ≫ PMOS width (Wp)
+  - Wider NMOS → lower ON resistance in pull-down path
+  - Switching threshold shifts toward lower input voltage
+  - Noise Margin Low (NML) improves, while NMH slightly reduces
+  - Still, the output swings rail-to-rail (0 to VDD), preserving digital logic levels
 
 <img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/c5262682-15bb-443c-8ee8-db15f883a59e" /> <br/>
 
