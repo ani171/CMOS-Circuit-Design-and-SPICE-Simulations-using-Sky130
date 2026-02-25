@@ -1373,7 +1373,7 @@ Vin in 0 2.5
 | 0.8V | <img width="300" height="200" alt="image" src="https://github.com/user-attachments/assets/0d5988fe-c982-40fd-acbb-a6f78d899ce2" /> | 9.43 |
 
 ## Static behaviour evaluation-CMOS inverter robustness- Device variation
-###  Sources of variation – Etching process
+###  Lecture 1: Sources of variation – Etching process
 - In a single CMOS inverter layout, the channel length (L) is defined by the gate length (polysilicon dimension), while the channel width (W) corresponds to the common overlapping region between polysilicon and diffusion.
 - During fabrication, especially in lithography and etching steps, there can be dimensional variations due to process tolerances.
 - These variations may cause slight deviations in the effective W and L of PMOS and NMOS devices.
@@ -1393,6 +1393,141 @@ Vin in 0 2.5
 <img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/57f7e698-2f87-46a2-a59e-8f8ef11579a1" /> <br/>
 
 - In an inverter chain, even though all inverters are designed identically, process variations (L, W, Vt) can be slightly different for each inverter.
-- Local random effects such as line-edge roughness and dopant fluctuations cause mismatch from one inverter to another.
-- Due to these variations, delay and switching threshold may slightly differ across the chain. As a result, variation can accumulate along the chain, impacting overall timing performance.
+- Local random effects, such as line-edge roughness and dopant fluctuations, cause a mismatch from one inverter to another.
+- Due to these variations, the  delay and switching threshold may slightly differ across the chain. As a result, variation can accumulate along the chain, impacting overall timing performance.
 
+### Lecture 2: Sources of variation – oxide thickness
+
+- Another important source of variation is oxide thickness
+- Thinner oxide → higher Cox → stronger drive current (lower effective resistance)
+- Thicker oxide → lower Cox → weaker drive current (higher effective resistance)
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/4fc1bdfd-2a91-417d-84be-46c527afea05" /> <br/>
+
+- The last figure shows the cross-sectional view of the CMOS inverter, highlighting the gate oxide under the polysilicon (or metal) gate
+
+### Lecture 3: Smart SPICE simulation for device variations
+- **Case 1**: Strong PMOS – Weak NMOS
+ - PMOS width (Wp) ≫ NMOS width (Wn)
+ - Since transistor resistance R is inversely proportional to width, a wider PMOS has lower ON resistance
+ - Pull-up network becomes stronger than pull-down network
+ - Switching threshold (VM) shifts toward higher input voltage
+ - Noise Margin High (NMH) improves, while NML slightly reduces
+ - However, the inverter still reaches full VDD and full 0 V, maintaining a valid logic level
+
+- **Case 2**: Weak PMOS – Strong NMOS
+ - NMOS width (Wn) ≫ PMOS width (Wp)
+ - Wider NMOS → lower ON resistance in pull-down path
+ - Switching threshold shifts toward lower input voltage
+ - Noise Margin Low (NML) improves, while NMH slightly reduces
+ - Still, the output swings rail-to-rail (0 to VDD), preserving digital logic levels
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/c5262682-15bb-443c-8ee8-db15f883a59e" /> <br/>
+
+- **Netlist file**
+```
+Vdd vdd 0 2.5
+Vin in  0 0
+
+M1 out in vdd vdd pmos W=0.375u L=0.25u
+M2 out in 0   0   nmos W=0.375u L=0.25u
+Cload out 0 10f
+
+.LIB "tsmc_025um_model.mod" CMOS_MODELS
+
+.control
+
+let nmoswidth = 0.375u
+let pmoswidth = 1.875u
+
+alter M2 W = nmoswidth
+alter M1 W = pmoswidth
+
+let widthVariation = 0
+
+dowhile widthVariation < 5
+
+    echo "------------------------------------"
+    echo "NMOS width = $&nmoswidth"
+    echo "PMOS width = $&pmoswidth"
+
+    dc Vin 0 2.5 0.01
+    let nmoswidth = nmoswidth + 0.375u
+    let pmoswidth = pmoswidth - 0.375u
+
+    alter @M2[W] = nmoswidth
+    alter @M1[W] = pmoswidth
+
+    let widthVariation = widthVariation + 1
+
+end
+
+plot dc1.out vs in dc2.out vs in dc3.out vs in dc4.out vs in dc5.out vs in \
+xlabel "Input Voltage (V)" \
+ylabel "Output Voltage (V)" \
+title "CMOS Inverter DC Characteristics under Width Variation"
+
+quit
+.endc
+
+.end
+```
+
+- Starts with strong PMOS (Wp = 1.875 µm) and weak NMOS
+- Gradually increases NMOS width and decreases PMOS width
+- Generates 5 DC transfer curves and plots all VTCs together to observe switching threshold shift and noise margin variation
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/16d2fc4f-ae8a-47e9-ac14-169beae62d8d" />
+
+
+### Lecture 4: Conclusion
+
+- CMOS inverter robustness is evaluated using noise margin and switching threshold
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/5ed6262d-7b3c-4b28-a5b8-096ba05704ce" /> <br/>
+
+- From the extreme VTC curves, the switching threshold varies by approximately 1.2 V
+- Such a large variation indicates significant sensitivity to sizing or parameter changes. This affects noise immunity and overall circuit stability
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/3a96c8ca-7fda-4ff4-ae25-fcbfe74d4e46" /> <br/>
+
+- Similarly, NMH varies by about 400 mV, while NML varies by approximately 300 mV.
+- If the noise margins had fallen inside the undefined (transition) region, it would be problematic because this region has very high gain.
+- Small noise in this high-gain region could get amplified, leading to erroneous outputs in digital logic circuits.
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/e272645c-dace-40b1-abf3-1d6520a92f7c" /> <br/>
+
+- Despite these variations, the gate operation remains stable, and this robustness is why CMOS inverters are widely used as building blocks for other logic circuits
+
+<img width="300" height="300" alt="image" src="https://github.com/user-attachments/assets/4ac2d23f-24ec-4abe-8fd4-afd1017640a7" /> <br/>
+
+
+###  Lecture 5: Sky130 Device Variation Labs
+
+- Open ```day5_inv_devicevariationwp7_wn042.spice```
+
+<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/24c3ccda-669e-464c-8300-53288196f3b0" /> <br/>
+
+- Wp/Wn = 16.66, which means the PMOS width is 16.66 times the NMOS width. Therefore, the PMOS is significantly wider and hence electrically stronger than the NMOS
+- A stronger PMOS provides higher pull-up current, shifting the switching threshold towards the right and increasing the ability to drive logic high at the output
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/bbdf65b7-fc1b-4303-9716-bad84a30f7d3" /> <br/>
+
+- Run ```ngspice``` and ```plot out vs in```
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/b4a6dce1-158e-4b83-960c-c5974eba09ac" /> <br/>
+
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/a26c9fac-a8d0-4a04-8736-19bdbe25e1ed" /> <br/>
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/5f6f4c84-fc79-4d03-945a-b91676387394" /> <br/>
+
+- Since Wp/Wn = 16.66, the PMOS is much stronger than the NMOS. Due to the stronger PMOS, the output stays at VDD (logic high) for a longer range of input voltage.
+- The switching threshold shifts toward a higher input voltage. This happens because the pull-up network dominates over the pull-down network.
+
+- **Obtaining the switching threshold**
+
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/5367688a-2579-4025-93bd-3cccafaf8abc" /> <br/>
+
+- The switching threshold is approximately 0.9879 V. Compared to the conventional switching threshold of 0.9000 V, this is a shift of only 87.9 mV.
+- The small shift indicates that the inverter characteristics are still well balanced.
+0 Hence, the CMOS circuit maintains *good robustness* despite the sizing change.
