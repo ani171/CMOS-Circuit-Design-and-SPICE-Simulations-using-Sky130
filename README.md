@@ -1397,9 +1397,14 @@ Vin in 0 2.5
 
 <img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/57f7e698-2f87-46a2-a59e-8f8ef11579a1" /> <br/>
 
+<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/53ab25fd-0b3a-4d15-9854-10a9f783d24b" /> <br/>
+
 - In an inverter chain, even though all inverters are designed identically, process variations (L, W, Vt) can be slightly different for each inverter.
 - Local random effects, such as line-edge roughness and dopant fluctuations, cause a mismatch from one inverter to another.
-- Due to these variations, the  delay and switching threshold may slightly differ across the chain. As a result, variation can accumulate along the chain, impacting overall timing performance.
+- Due to these variations, the  delay and switching threshold may slightly differ across the chain. As a result, variation can accumulate along the chain, impacting overall timing performance and the drain current
+
+<img width="700" height="300" alt="image" src="https://github.com/user-attachments/assets/804a75bb-cb3a-45ea-b785-5a718ffce10b" /> <br/>
+
 
 ### Lecture 2: Sources of variation – oxide thickness
 
